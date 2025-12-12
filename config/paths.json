@@ -1,0 +1,7 @@
+
+{
+  "RAW_VIDEO_DIR": "data/raw/videos",
+  "RAW_ANNOTATIONS_DIR": "data/raw/cvat_annotations",
+  "PROCESSED_FRAMES_DIR": "data/processed/frames",
+  "PROCESSED_ANNOTATIONS_DIR": "data/processed/annotations"
+}
