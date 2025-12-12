@@ -1,7 +1,6 @@
 """
 Utils for video processing
 """
-import json
 from pathlib import Path
 import cv2
 
@@ -45,6 +44,9 @@ def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> 
     saved_count = 0
 
     while True:
+        # read frane from video source
+        # ret: bool, True if successful
+        # frame is the image data as a np array
         ret, frame = cap.read()
 
         if not ret:
@@ -52,8 +54,8 @@ def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> 
 
         # Save frame at specified interval
         if frame_count % frame_interval == 0: # checks if current frame number is divisible by the interval
-            # Format frame number as 3-digit string (e.g., 001, 002, ...)
-            frame_filename = f"{video_name}_{saved_count:03d}.jpg"
+            # Format frame number as 4-digit string (e.g., 0001, 0002, ...)
+            frame_filename = f"{video_name}_{saved_count:04d}.jpg"
             frame_path = output_path / frame_filename
             cv2.imwrite(str(frame_path), frame)
             saved_count += 1
@@ -63,13 +65,25 @@ def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> 
     cap.release()
     print(f"Extracted {saved_count} frames from {video_name} to {output_path}")
 
-def load_dataset_metadata() -> dict:
-    """
-    Load the dataset metadata
-    :return: dict containing dataset metadata
-    """
-    config_path = Path(__file__).parent.parent.parent / "config" / "dataset_metadata.json"
-    with open(config_path, 'r') as f:
-        return json.load(f)
 
+def rename_video(game_name:str, video_path:Path) -> None:
+    """
+    Rename video file to: game_name_clip_number, e.g. allstar_2019_001
+    :param game_name: name of the game
+    :param video_path: path to video file
+    """
+
+    for clip in video_path.iterdir():
+        if clip.is_file() and game_name not in clip.stem:
+            new_name = clip.with_name(f"{game_name}_{clip.stem}{clip.suffix}")
+            clip.rename(new_name)
+
+def standardize_all_video_names(video_dir:Path) -> None:
+    """
+    Standardize names of all video files
+    :param video_dir: directory containing all video files
+    """
+    for game_dir in video_dir.iterdir():
+        game_name = game_dir.name
+        rename_video(game_name, game_dir)
 
