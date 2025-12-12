@@ -1,0 +1,210 @@
+{
+  "dataset_name": "McGill Hockey Player Tracking Dataset (MHPTD)",
+  "total_videos": 25,
+  "total_frames": 82305,
+  "total_bounding_boxes": 632785,
+  "total_tracklets": 2056,
+  "total_length_sec": 1895.4,
+  "videos": [
+    {
+      "video_name": "all_star_2009_001",
+      "fps": 30,
+      "frames": 1670,
+      "bounding_boxes": 11022,
+      "tracklets": 363,
+      "length_sec": 55.6
+    },
+    {
+      "video_name": "all_star_2009_002",
+      "fps": 30,
+      "frames": 1964,
+      "bounding_boxes": 12515,
+      "tracklets": 543,
+      "length_sec": 65.4
+    },
+    {
+      "video_name": "all_star_2009_003",
+      "fps": 30,
+      "frames": 1837,
+      "bounding_boxes": 11772,
+      "tracklets": 473,
+      "length_sec": 61.2
+    },
+    {
+      "video_name": "all_star_2009_004",
+      "fps": 60,
+      "frames": 3946,
+      "bounding_boxes": 22797,
+      "tracklets": 1143,
+      "length_sec": 131.5
+    },
+    {
+      "video_name": "all_star_2009_005",
+      "fps": 30,
+      "frames": 2065,
+      "bounding_boxes": 11742,
+      "tracklets": 563,
+      "length_sec": 68.8
+    },
+    {
+      "video_name": "all_star_2009_006",
+      "fps": 30,
+      "frames": 2645,
+      "bounding_boxes": 15693,
+      "tracklets": 793,
+      "length_sec": 88.2
+    },
+    {
+      "video_name": "CHI_TOR_2016_001",
+      "fps": 30,
+      "frames": 2370,
+      "bounding_boxes": 20021,
+      "tracklets": 1083,
+      "length_sec": 79.0
+    },
+    {
+      "video_name": "CHI_TOR_2016_002",
+      "fps": 30,
+      "frames": 1582,
+      "bounding_boxes": 14112,
+      "tracklets": 523,
+      "length_sec": 52.7
+    },
+    {
+      "video_name": "CHI_TOR_2016_003",
+      "fps": 30,
+      "frames": 1066,
+      "bounding_boxes": 7641,
+      "tracklets": 553,
+      "length_sec": 35.5
+    },
+    {
+      "video_name": "CHI_TOR_2016_004",
+      "fps": 30,
+      "frames": 1617,
+      "bounding_boxes": 13858,
+      "tracklets": 603,
+      "length_sec": 53.9
+    },
+    {
+      "video_name": "PIT_VS_SJ_001",
+      "fps": 30,
+      "frames": 1390,
+      "bounding_boxes": 10824,
+      "tracklets": 583,
+      "length_sec": 46.3
+    },
+    {
+      "video_name": "PIT_VS_SJ_002",
+      "fps": 30,
+      "frames": 2762,
+      "bounding_boxes": 21314,
+      "tracklets": 1093,
+      "length_sec": 92.1
+    },
+    {
+      "video_name": "PIT_VS_SJ_003",
+      "fps": 60,
+      "frames": 3525,
+      "bounding_boxes": 27645,
+      "tracklets": 1513,
+      "length_sec": 117.5
+    },
+    {
+      "video_name": "PIT_VS_WAS_001",
+      "fps": 30,
+      "frames": 2980,
+      "bounding_boxes": 25401,
+      "tracklets": 753,
+      "length_sec": 99.3
+    },
+    {
+      "video_name": "CAR_BOS_2019_001",
+      "fps": 60,
+      "frames": 6516,
+      "bounding_boxes": 53283,
+      "tracklets": 1546,
+      "length_sec": 108.6
+    },
+    {
+      "video_name": "CAR_BOS_2019_002",
+      "fps": 60,
+      "frames": 2643,
+      "bounding_boxes": 22761,
+      "tracklets": 626,
+      "length_sec": 44.05
+    },
+    {
+      "video_name": "STL_SAJ_2009_001",
+      "fps": 60,
+      "frames": 5646,
+      "bounding_boxes": 40611,
+      "tracklets": 1306,
+      "length_sec": 94.1
+    },
+    {
+      "video_name": "STL_SAJ_2009_002",
+      "fps": 60,
+      "frames": 3808,
+      "bounding_boxes": 29108,
+      "tracklets": 916,
+      "length_sec": 63.5
+    },
+    {
+      "video_name": "STL_SAJ_2009_003",
+      "fps": 60,
+      "frames": 6026,
+      "bounding_boxes": 40218,
+      "tracklets": 726,
+      "length_sec": 100.4
+    },
+    {
+      "video_name": "CAR_VS_NYR_001",
+      "fps": 60,
+      "frames": 5342,
+      "bounding_boxes": 45768,
+      "tracklets": 956,
+      "length_sec": 89.0
+    },
+    {
+      "video_name": "CAR_VS_NYR_002",
+      "fps": 60,
+      "frames": 4282,
+      "bounding_boxes": 37843,
+      "tracklets": 876,
+      "length_sec": 71.4
+    },
+    {
+      "video_name": "CAR_VS_NYR_003",
+      "fps": 60,
+      "frames": 4878,
+      "bounding_boxes": 42151,
+      "tracklets": 1056,
+      "length_sec": 81.3
+    },
+    {
+      "video_name": "CGY_VS_DAL_001",
+      "fps": 60,
+      "frames": 3969,
+      "bounding_boxes": 32840,
+      "tracklets": 706,
+      "length_sec": 66.15
+    },
+    {
+      "video_name": "CGY_VS_DAL_002",
+      "fps": 60,
+      "frames": 4168,
+      "bounding_boxes": 36283,
+      "tracklets": 956,
+      "length_sec": 69.4
+    },
+    {
+      "video_name": "CGY_VS_DAL_003",
+      "fps": 60,
+      "frames": 3608,
+      "bounding_boxes": 25562,
+      "tracklets": 416,
+      "length_sec": 60.1
+    }
+  ]
+}
