@@ -5,12 +5,12 @@ from pathlib import Path
 import cv2
 
 
-def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> None:
+def extract_frames_from_video(video_path: str, output_path: str, frame_interval = None) -> None:
     """
     Extract frames from a video
     :param video_path: path containing raw video file
     :param output_path: path where frames will be saved
-    :param fps: frames per second (if None, extracts all frames)
+    :param frame_interval: every nth frame (if None, extracts all frames)
     :return: None
     """
     video_path = Path(video_path)
@@ -33,12 +33,8 @@ def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> 
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
     # Calculate frame interval
-    if fps is None: # save every frame
+    if frame_interval is None: # save every frame
         frame_interval = 1
-    else: # calculate how many frames to skip
-        frame_interval = int(video_fps / fps)
-        if frame_interval < 1:
-            frame_interval = 1
 
     frame_count = 0
     saved_count = 0
@@ -55,7 +51,7 @@ def extract_frames_from_video(video_path: str, output_path: str, fps = None) -> 
         # Save frame at specified interval
         if frame_count % frame_interval == 0: # checks if current frame number is divisible by the interval
             # Format frame number as 4-digit string (e.g., 0001, 0002, ...)
-            frame_filename = f"{video_name}_{saved_count:04d}.jpg"
+            frame_filename = f"{video_name}_{frame_count:04d}.jpg"
             frame_path = output_path / frame_filename
             cv2.imwrite(str(frame_path), frame)
             saved_count += 1
