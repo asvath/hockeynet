@@ -3,11 +3,7 @@ from datetime import datetime
 import os
 import json
 """
-Utility functions for logging various outputs during TTC delay data preprocessing.
-
-Includes:
-- Logging unique stations by category (passenger, non-passenger, unknown)
-- Logging station names with directional phrases (to, toward, towards)
+Utility functions for logging various outputs during hockeynet data preprocessing.
 """
 
 def write_log(log_lines:list, prefix: str, log_dir = LOGS_DIR) -> str:
