@@ -49,9 +49,6 @@ def write_json_log(data: dict, log_name: str, log_dir = LOGS_DIR, run_timestamp:
     if run_timestamp is None:
         run_timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
-    # Add timestamp to the data
-    data['timestamp'] = datetime.now().isoformat()
-
     # Use JSONL format (one JSON object per line)
     log_path = os.path.join(date_folder, f'log_{run_timestamp}.jsonl')
 

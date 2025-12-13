@@ -3,15 +3,16 @@ Utils for video processing
 """
 from pathlib import Path
 import cv2
+from datetime import datetime
 
 
-def extract_frames_from_video(video_path: str, output_path: str, frame_interval = None) -> None:
+def extract_frames_from_video(video_path: str, output_path: str, frame_interval = None) -> dict:
     """
     Extract frames from a video
     :param video_path: path containing raw video file
     :param output_path: path where frames will be saved
     :param frame_interval: every nth frame (if None, extracts all frames)
-    :return: None
+    :return: dict containing log data
     """
     video_path = Path(video_path)
     output_path = Path(output_path)
@@ -60,7 +61,18 @@ def extract_frames_from_video(video_path: str, output_path: str, frame_interval 
 
     cap.release()
     print(f"Extracted {saved_count} frames from {video_name} to {output_path}")
+    # Log extraction info
+    log_data = {
+        "video_name": video_name,
+        "timestamp": datetime.now().isoformat(),
+        "video_fps": video_fps,
+        "total_frames": total_frames,
+        "frame_interval": frame_interval,
+        "frames_extracted": saved_count,
+        "output_path": str(output_path),
+    }
 
+    return log_data
 
 def rename_video(game_name:str, video_path:Path) -> None:
     """
