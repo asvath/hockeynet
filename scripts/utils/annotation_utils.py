@@ -1,3 +1,4 @@
+import numpy as np
 """
 Utility functions for annotations
 """
@@ -42,8 +43,42 @@ def validate_annotation(annotation:list)->bool:
     return True
 
 
-def yolo_to_absolute(x, y, w, h, img_width, img_height)->tuple:
-    pass
+def yolo_to_absolute(x:float, y:float, w: float, h:float, img_width:int, img_height:int)->tuple:
+    """
+    Converts a YOLO formatted annotation into absolute, pixel corner coordinates
+    :param x: normalized x coordinate of bounding box
+    :param y: normalized y coordinate of bounding box
+    :param w: normalized width of bounding box
+    :param h: normalized height of bounding box
+    :param img_width: image width
+    :param img_height: image height
+    :return: tuple of bounding box corner coordinates
+    """
+    x_min = np.floor((x - w/2) * img_width).astype(int)
+    x_max = np.ceil((x + w/2) * img_width).astype(int)
+    y_min = np.floor((y - h/2) * img_height).astype(int)
+    y_max = np.ceil((y + h/2) * img_height).astype(int)
+
+    return x_min, y_min, x_max, y_max
 
 def get_annotation_stats(annotations: list)-> dict:
-    pass
+    """
+    Get annotation statistics for a single frame
+    :param annotations:
+    :return: dict with statistics
+    """
+
+    total_annotations = len(annotations)
+    class_counts = {}
+    width = []
+    height = []
+    for ann in annotations:
+        class_counts[ann['class_id']] = class_counts.get(ann['class_id'], 0) + 1
+        width.append(ann['w'])
+        height.append(ann['h'])
+
+    return {'total_annotations': total_annotations,
+            'class_counts': class_counts,
+            'avg_bbox_width': sum(width) / total_annotations,
+            'avg_bbox_height': sum(height) / total_annotations
+            }
