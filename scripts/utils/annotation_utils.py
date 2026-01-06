@@ -16,15 +16,16 @@ def load_annotation(path:Path) -> list:
             line = line.strip()
             if line:
                 parts = line.split()
-                class_id = int(parts[0])
+                category_id = int(parts[0])
                 x, y, w, h = map(float, parts[1:5])
                 annotations.append(
-                    {'class_id': class_id,
-                     'x': x,
-                     'y': y,
-                     'w': w,
-                     'h': h
-                     })
+                    {
+                        "category_id": category_id,
+                        'x' : x,
+                        'y' : y,
+                        'w' : w,
+                        'h': h,
+                        })
 
     return annotations
 
@@ -39,7 +40,7 @@ def validate_annotation(annotation:list)->bool:
     for ann in annotation:
         if not( 0<= ann['x'] <= 1 and 0<= ann['y'] <= 1 and 0<= ann['w'] <= 1 and 0<= ann['h'] <= 1):
             return False
-        if not (0 <= ann['class_id'] <= 6):
+        if not (0 <= ann['category_id'] <= 6):
             return False
     return True
 
@@ -95,7 +96,7 @@ def get_annotation_stats(annotations: list)-> dict:
     width = []
     height = []
     for ann in annotations:
-        class_counts[ann['class_id']] = class_counts.get(ann['class_id'], 0) + 1
+        class_counts[ann['category_id']] = class_counts.get(ann['category_id'], 0) + 1
         width.append(ann['w'])
         height.append(ann['h'])
 
@@ -120,7 +121,7 @@ def load_all_annotations(annotations_dir: Path)-> dict:
     return dataset_annotations
 
 
-def yolo_to_coco_bbox(x, y, w, h, img_width, img_height) -> list:
+def yolo_to_coco_bbox(x, y, w, h, img_width, img_height) -> tuple:
     """
     Converts a YOLO formatted bbox into coco bbox
     :param x: normalized x coordinate of bounding box
@@ -133,13 +134,62 @@ def yolo_to_coco_bbox(x, y, w, h, img_width, img_height) -> list:
     """
     x_min, y_min, _, _, w_abs, h_abs = yolo_to_absolute(x, y, w, h, img_width, img_height)
 
-    return [x_min, y_min, w_abs, h_abs]
+    return x_min, y_min, w_abs, h_abs
 
-
-def convert_to_coco(annotations:list)->dict:
+def create_coco_annotation_per_bbox(category_id, x:float, y:float, w: float, h:float,
+                           img_width:int, img_height:int) -> dict:
     """
-    Converts a YOLO formatted annotation into COCO format
-    :param annotations:
-    :return:
+    Creates a single COCO annotation
+    :param category_id: class id
+    :param x: normalized x coordinate of bounding box
+    :param y: normalized y coordinate of bounding box
+    :param w: normalized width of bounding box
+    :param h: normalized height of bounding box
+    :param img_width: image width
+    :param img_height: image height
+    :return: dict with annotation
+    """
+    x_min, y_min, w_abs, h_abs = yolo_to_coco_bbox(x, y, w, h, img_width, img_height)
+    area =  w_abs * h_abs
+
+    return {
+        'category_id': category_id,
+        'bbox': [x_min, y_min, w_abs, h_abs],
+        'area': area,
+        'iscrowd': 0,
+    }
+
+def create_coco_annotation_per_frame(path:Path, img_width: int, img_height: int) -> list:
+    """
+    Creates a COCO annotation for the whole frame
+    :param path: path to annotation file
+    :param img_width: image width
+    :param img_height: image height
+    :return: list of COCO annotations for the frame
+    """
+
+    yolo_annotations = load_annotation(path)
+    annotations = []
+
+    for ann in yolo_annotations:
+        coco_ann = create_coco_annotation_per_bbox(category_id= ann['category_id'],
+                                        x = ann['x'],
+                                        y = ann['y'],
+                                        w = ann['w'],
+                                        h = ann['h'],
+                                        img_width=img_width,
+                                        img_height=img_height
+                                        )
+        annotations.append(coco_ann)
+
+    return annotations
+
+
+def convert_to_coco_format(annotations_dir: Path, images_dir: Path, output_path: Path):
+    """
+    Converts entire YOLO dataset to COCO JSON format
+    :param annotations_dir: directory with annotations
+    :param images_dir: directory with images
+    :param output_path: path to output json file
     """
     pass
