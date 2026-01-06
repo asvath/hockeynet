@@ -1,9 +1,10 @@
 import numpy as np
+from pathlib import Path
 """
 Utility functions for annotations
 """
 
-def load_annotation(path:str) -> list:
+def load_annotation(path:Path) -> list:
     """
     Reads YOLO format annotation file
     :param path: path to annotation file
@@ -82,3 +83,25 @@ def get_annotation_stats(annotations: list)-> dict:
             'avg_bbox_width': sum(width) / total_annotations,
             'avg_bbox_height': sum(height) / total_annotations
             }
+
+def load_all_annotations(annotations_dir: Path)-> dict:
+    """
+    Loads all annotation files from a directory
+    :param annotations_dir: directory with annotations
+    :return: dict with filename as key and annotations as value
+    """
+    dataset_annotations = {}
+    files = list(annotations_dir.iterdir())
+    for file in files:
+        dataset_annotations[file.stem] = load_annotation(file)
+
+
+    return dataset_annotations
+
+def convert_to_coco(annotations:list)->dict:
+    """
+    Converts a YOLO formatted annotation into COCO format
+    :param annotations:
+    :return:
+    """
+    pass
