@@ -43,10 +43,30 @@ def validate_annotation(annotation:list)->bool:
             return False
     return True
 
-
 def yolo_to_absolute(x:float, y:float, w: float, h:float, img_width:int, img_height:int)->tuple:
     """
-    Converts a YOLO formatted annotation into absolute, pixel corner coordinates
+    Converts a YOLO formatted annotation into absolute, pixel corner coordinate
+    :param x: normalized x coordinate of bounding box
+    :param y: normalized y coordinate of bounding box
+    :param w: normalized width of bounding box
+    :param h: normalized height of bounding box
+    :param img_width: image width
+    :param img_height: image height
+    :return: tuple of bounding box corner coordinates, absolute width and absolute height
+    """
+    x_min = (x - w/2) * img_width
+    x_max = (x + w/2) * img_width
+    y_min = (y - h/2) * img_height
+    y_max = (y + h/2) * img_height
+    w_abs = w * img_width
+    h_abs = h * img_height
+
+    return x_min, y_min, x_max, y_max, w_abs, h_abs
+
+def yolo_to_absolute_viz(x:float, y:float, w: float, h:float, img_width:int, img_height:int)->tuple:
+
+    """
+    Converts a YOLO formatted annotation into absolute, pixel corner coordinates for visualization
     :param x: normalized x coordinate of bounding box
     :param y: normalized y coordinate of bounding box
     :param w: normalized width of bounding box
@@ -55,10 +75,11 @@ def yolo_to_absolute(x:float, y:float, w: float, h:float, img_width:int, img_hei
     :param img_height: image height
     :return: tuple of bounding box corner coordinates
     """
-    x_min = np.floor((x - w/2) * img_width).astype(int)
-    x_max = np.ceil((x + w/2) * img_width).astype(int)
-    y_min = np.floor((y - h/2) * img_height).astype(int)
-    y_max = np.ceil((y + h/2) * img_height).astype(int)
+    x_min, y_min, x_max, y_max, _, _ = yolo_to_absolute(x, y, w, h, img_width, img_height)
+    x_min = np.floor(x_min).astype(int)
+    x_max = np.ceil(x_max).astype(int)
+    y_min = np.floor(y_min).astype(int)
+    y_max = np.ceil(y_max).astype(int)
 
     return x_min, y_min, x_max, y_max
 
@@ -97,6 +118,23 @@ def load_all_annotations(annotations_dir: Path)-> dict:
 
 
     return dataset_annotations
+
+
+def yolo_to_coco_bbox(x, y, w, h, img_width, img_height) -> list:
+    """
+    Converts a YOLO formatted bbox into coco bbox
+    :param x: normalized x coordinate of bounding box
+    :param y: normalized y coordinate of bounding box
+    :param w: normalized width of bounding box
+    :param h: normalized height of bounding box
+    :param img_width: image width
+    :param img_height: image height
+    :return: list [x_min, y_min, width, height] in absolute pixel coordinates (COCO format)
+    """
+    x_min, y_min, _, _, w_abs, h_abs = yolo_to_absolute(x, y, w, h, img_width, img_height)
+
+    return [x_min, y_min, w_abs, h_abs]
+
 
 def convert_to_coco(annotations:list)->dict:
     """
