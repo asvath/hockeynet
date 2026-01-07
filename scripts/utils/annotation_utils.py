@@ -1,5 +1,7 @@
+import json
 import numpy as np
 from pathlib import Path
+
 """
 Utility functions for annotations
 """
@@ -117,7 +119,6 @@ def load_all_annotations(annotations_dir: Path)-> dict:
     for file in files:
         dataset_annotations[file.stem] = load_annotation(file)
 
-
     return dataset_annotations
 
 
@@ -185,11 +186,65 @@ def create_coco_annotation_per_frame(path:Path, img_width: int, img_height: int)
     return annotations
 
 
-def convert_to_coco_format(annotations_dir: Path, images_dir: Path, output_path: Path):
+def convert_to_coco_format(annotations_dir: Path, dataset_metadata_path: Path, output_path: Path,
+                           img_width = 1920, img_height = 1080) -> dict:
     """
-    Converts entire YOLO dataset to COCO JSON format
+    Converts entire YOLO dataset to COCO JSON format and writes it out
     :param annotations_dir: directory with annotations
-    :param images_dir: directory with images
-    :param output_path: path to output json file
+    :param dataset_metadata_path: path to dataset metadata JSON file
+    :param output_path: path to output JSON file
+    :param img_width: image width
+    :param img_height: image height
+    :return: dict containing COCO formatted annotations, image information and categories
     """
-    pass
+    images = []
+    annotations = []
+    categories = []
+    img_id = 0
+    ann_id = 0
+    ann_files = list(annotations_dir.iterdir())
+
+    for file in ann_files:
+        img_id += 1
+        images.append({
+            "id": img_id,
+            "file_name": file.stem + ".jpg",
+            "width": img_width,
+            "height" : img_height
+        })
+        coco_annotations = create_coco_annotation_per_frame(file, img_width= img_width, img_height= img_height)
+        for ann in coco_annotations:
+            ann_id += 1
+            ann['id'] = ann_id
+            ann['image_id'] = img_id
+            annotations.append(ann)
+
+    with open(dataset_metadata_path, 'r') as f:
+        metadata = json.load(f)
+        for cat, name in metadata["classes"].items():
+            categories.append({
+                "id": int(cat),
+                "name": name
+            })
+        info = {
+            "dataset_name": metadata["dataset_name"],
+            "source": metadata["source"],
+            "total_frames": metadata["total_frames"],
+            "total_annotations": metadata["total_annotations"],
+            "image_resolution": metadata["image_resolution"],
+            "image_format": "JPG",
+        }
+
+    coco_data = {
+        "info": info,
+        "images": images,
+        "annotations": annotations,
+        "categories": categories
+    }
+
+    # Save to file if output_path provided
+    if output_path:
+        with open(output_path, 'w') as f:
+            json.dump(coco_data, f, indent=2)
+
+    return coco_data
