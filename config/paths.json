@@ -1,8 +1,12 @@
 
 {
   "RAW_VIDEO_DIR": "data/raw/videos",
-  "RAW_ANNOTATIONS_DIR": "data/raw/cvat_annotations",
+  "RAW_FRAMES_DIR": "data/raw/frames",
+  "RAW_ANNOTATIONS_DIR": "data/raw/annotations",
   "PROCESSED_FRAMES_DIR": "data/processed/frames",
   "PROCESSED_ANNOTATIONS_DIR": "data/processed/annotations",
-  "LOGS_DIR": "logs"
+  "CONFIG_DIR": "config",
+  "LOGS_DIR": "logs",
+
+  "DATASET_METADATA": "config/dataset_metadata.json"
 }
