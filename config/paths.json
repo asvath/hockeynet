@@ -8,5 +8,6 @@
   "CONFIG_DIR": "config",
   "LOGS_DIR": "logs",
 
-  "DATASET_METADATA": "config/dataset_metadata.json"
+  "DATASET_METADATA": "config/dataset_metadata.json",
+  "COCO_ANNOTATIONS" : "data/processed/annotations/coco_annotations.json"
 }
