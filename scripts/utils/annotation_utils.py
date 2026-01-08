@@ -248,3 +248,14 @@ def convert_to_coco_format(annotations_dir: Path, dataset_metadata_path: Path, o
             json.dump(coco_data, f, indent=2)
 
     return coco_data
+
+def load_coco_annotation(coco_json_path: Path) -> dict:
+    """
+    Load COCO format annotations
+    :param coco_json_path: path to coco json file
+    :return: dict with COCO formatted annotations
+    """
+    with open(coco_json_path, "r") as f:
+        data = json.load(f)
+
+    return data
