@@ -259,3 +259,30 @@ def load_coco_annotation(coco_json_path: Path) -> dict:
         data = json.load(f)
 
     return data
+
+def image_lookup(coco_annotation:dict) -> dict:
+    """
+    Creates dictionary with image name and image data
+    :param coco_annotation: dict with COCO annotation
+    :return: dictionary with image name and image data
+    """
+    image_dict = {}
+    for img in coco_annotation['images']:
+        image_dict[img['file_name']] = img
+
+    return image_dict
+
+def annotation_lookup(coco_annotation: dict) -> dict:
+    """
+    Creates dictionary mapping image_id to list of annotations
+    :param coco_annotation: dict with COCO annotation
+    :return: dictionary with image_id to list of annotations
+    """
+    annotation_dict = {}
+    for ann in coco_annotation['annotations']:
+        image_id = ann['image_id']
+        if image_id not in annotation_dict:
+            annotation_dict[image_id] = []
+        annotation_dict[image_id].append(ann)
+
+    return annotation_dict
