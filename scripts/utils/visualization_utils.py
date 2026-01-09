@@ -16,7 +16,7 @@ def draw_coco_bboxes(image_path: Path, annotations: list, categories: dict) -> F
     Draw COCO bounding boxes on image using matplotlib
     :param image_path: path to image
     :param annotations: list of annotations
-    :param categories: dict with keys 'id' and 'bbox'
+    :param categories: dict mapping category_id to category_name
     return figure with bounding boxes
     """
     # Load image
@@ -35,7 +35,7 @@ def draw_coco_bboxes(image_path: Path, annotations: list, categories: dict) -> F
         category_id = ann['category_id']
 
         color = colors[category_id % len(colors)]
-        category_name = categories[category_id]['name']
+        category_name = categories[category_id]
 
         # absolute pixel coordinates
         x_min, y_min, _, _, width, height = coco_to_absolute(x_min, y_min, width, height)

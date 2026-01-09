@@ -272,6 +272,18 @@ def image_lookup(coco_annotation:dict) -> dict:
 
     return image_dict
 
+def category_lookup(coco_annotation:dict) -> dict:
+    """
+    Creates dictionary with category id and category name
+    :param coco_annotation: dict with COCO annotation
+    :return: dictionary with category id and category name
+    """
+    cat_dict = {}
+    for cat in coco_annotation['categories']:
+        cat_dict[cat["id"]] = cat["name"]
+
+    return cat_dict
+
 def annotation_lookup(coco_annotation: dict) -> dict:
     """
     Creates dictionary mapping image_id to list of annotations
