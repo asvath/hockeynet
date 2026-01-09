@@ -286,3 +286,22 @@ def annotation_lookup(coco_annotation: dict) -> dict:
         annotation_dict[image_id].append(ann)
 
     return annotation_dict
+
+def coco_to_absolute(x_min_float:float, y_min_float:float, w_float: float, h_float:float)->tuple:
+    """
+    Converts a coco formatted annotation into absolute, pixel coordinates
+    :param x_min_float: normalized x_min coordinate of bounding box
+    :param y_min_float: normalized y_min coordinate of bounding box
+    :param w_float: normalized width of bounding box
+    :param h_float: normalized height of bounding box
+    :return: tuple of bounding box corner coordinates, absolute width and absolute height
+    """
+    x_min = int(np.floor(x_min_float))
+    y_min = int(np.floor(y_min_float))
+    x_max = int(np.ceil(x_min_float + w_float))
+    y_max = int(np.ceil(y_min_float + h_float))
+
+    width = x_max - x_min
+    height = y_max - y_min
+
+    return x_min, y_min, x_max, y_max, width, height

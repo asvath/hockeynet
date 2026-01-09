@@ -2,44 +2,52 @@
 Utility functions for visualization
 """
 from pathlib import Path
-from annotation_utils import load_coco_annotation
+from scripts.utils.annotation_utils import coco_to_absolute
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from PIL import Image
 
 
-def image_lookup(coco_annotation:dict) -> dict:
+def draw_coco_bboxes(image_path: Path, annotations: list, categories: dict):
     """
-    Creates dictionary with image name and image data
-    :param coco_annotation: dict with COCO annotation
-    :return: dictionary with image name and image data
+    Draw COCO bounding boxes on image using matplotlib
     """
-    image_dict = {}
-    for img in coco_annotation['images']:
-        image_dict[img['file_name'].stem] = img
+    # Load image
+    img = Image.open(image_path)
 
-    return image_dict
+    # Create figure
+    fig, ax = plt.subplots(1, figsize=(12, 8))
+    ax.imshow(img)
 
-def annotation_lookup(image_name: str, coco_annotation: dict, image_dict: dict) -> dict:
-    """
-    Creates dictionary with image name and annotation data
-    :param image_name: name of image
-    :param coco_annotation: dict with COCO annotation
-    :param image_dict: dict with image name and image data
-    :return: dictionary with image name and annotation data
-    """
-    annotation_dict = {}
-    annotation_list = []
-    image_id = image_dict[image_name]['id']
-    for ann in coco_annotation['annotations']:
-        if ann['image_id'] == image_id:
-            annotation_list.append(ann)
-    annotation_dict[image_name] = annotation_list
+    # Define colors
+    colors = ['red', 'green', 'blue', 'yellow', 'magenta', 'cyan', 'orange']
 
-    return annotation_dict
+    # Draw each bbox
+    for ann in annotations:
+        x_min, y_min, width, height = ann['bbox']
+        category_id = ann['category_id']
 
+        color = colors[category_id % len(colors)]
+        category_name = categories[category_id]['name']
 
-def draw_coco_bboxes(image, annotations, categories):
-    """Draw bounding boxes on image"""
-    pass
+        # absolute pixel coordinates
+        x_min, y_min, _, _, width, height = coco_to_absolute(x_min, y_min, width, height)
 
+        # Create rectangle
+        rect = patches.Rectangle(
+            (x_min, y_min), width, height,
+            linewidth=2, edgecolor=color, facecolor='none'
+        )
+        ax.add_patch(rect)
+
+        # Add label
+        ax.text(x_min, y_min - 5, category_name,
+                bbox=dict(facecolor=color, alpha=0.5),
+                fontsize=10, color='white')
+
+    ax.axis('off')
+    plt.tight_layout()
+    return fig
 
 def visualize_random_samples(coco_data, images_dir, n_samples=5):
     """Visualize random samples from dataset"""
