@@ -2,15 +2,22 @@
 Utility functions for visualization
 """
 from pathlib import Path
+
+from matplotlib.figure import Figure
+
 from scripts.utils.annotation_utils import coco_to_absolute
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from PIL import Image
 
 
-def draw_coco_bboxes(image_path: Path, annotations: list, categories: dict):
+def draw_coco_bboxes(image_path: Path, annotations: list, categories: dict) -> Figure:
     """
     Draw COCO bounding boxes on image using matplotlib
+    :param image_path: path to image
+    :param annotations: list of annotations
+    :param categories: dict with keys 'id' and 'bbox'
+    return figure with bounding boxes
     """
     # Load image
     img = Image.open(image_path)
