@@ -353,3 +353,41 @@ def find_images_with_multiples(coco_annotation: dict, category_id: int) -> list:
         multiple_cat_img.append(image_id_dict[img_id]['file_name'])
 
     return multiple_cat_img
+
+
+def find_images_with_out_of_bounds(coco_annotation: dict) -> dict:
+    """
+    Find all images where annotations extend outside the image boundaries
+    :param coco_annotation: dict with COCO annotation
+    :return: dict mapping file_name to list of out-of-bounds annotations
+    """
+    image_id_dict = image_id_lookup(coco_annotation)
+    out_of_bounds = {}
+
+    for ann in coco_annotation['annotations']:
+        img_id = ann['image_id']
+        img_data = image_id_dict[img_id]
+        img_width = img_data['width']
+        img_height = img_data['height']
+
+        x_min, y_min, w, h = ann['bbox']
+        x_max = x_min + w
+        y_max = y_min + h
+
+        reasons = []
+        if x_min < 0:
+            reasons.append(f"x_min={x_min:.1f} < 0")
+        if y_min < 0:
+            reasons.append(f"y_min={y_min:.1f} < 0")
+        if x_max > img_width:
+            reasons.append(f"x_max={x_max:.1f} > img_width={img_width}")
+        if y_max > img_height:
+            reasons.append(f"y_max={y_max:.1f} > img_height={img_height}")
+
+        if reasons:
+            file_name = img_data['file_name']
+            if file_name not in out_of_bounds:
+                out_of_bounds[file_name] = []
+            out_of_bounds[file_name].append(ann)
+
+    return out_of_bounds
