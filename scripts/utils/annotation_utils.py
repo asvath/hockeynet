@@ -329,3 +329,27 @@ def coco_to_absolute(x_min_float:float, y_min_float:float, w_float: float, h_flo
     height = y_max - y_min
 
     return x_min, y_min, x_max, y_max, width, height
+
+def find_images_with_multiples(coco_annotation: dict, category_id: int) -> list:
+    """
+    Find all images with multiple annotations for a given category (e.g. two pucks in an image)
+    :param coco_annotation: dict with COCO annotation
+    :param category_id: category id
+    :return: list of images with multiple annotations for the given category
+    """
+    # Find images with multiple annotations for category
+    counts = {}
+    for ann in coco_annotation['annotations']:
+        if ann['category_id'] == category_id:
+            img_id = ann['image_id']
+            counts[img_id] = counts.get(img_id, 0) + 1
+
+    # Filter images with more than 1 annotation
+    multiple_cat = {img_id: count for img_id, count in counts.items() if count > 1}
+
+    image_id_dict = image_id_lookup(coco_annotation)
+    multiple_cat_img = []
+    for img_id, _ in multiple_cat.items():
+        multiple_cat_img.append(image_id_dict[img_id]['file_name'])
+
+    return multiple_cat_img
