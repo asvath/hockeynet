@@ -3,8 +3,10 @@
   "RAW_VIDEO_DIR": "data/raw/videos",
   "RAW_FRAMES_DIR": "data/raw/frames",
   "RAW_ANNOTATIONS_DIR": "data/raw/annotations",
+  "RAW_VIDEOS_DIR" : "data/raw/videos",
   "PROCESSED_FRAMES_DIR": "data/processed/frames",
   "PROCESSED_ANNOTATIONS_DIR": "data/processed/annotations",
+  "PROCESSED_VIDEOS_DIR": "data/processed/videos",
   "CONFIG_DIR": "config",
   "LOGS_DIR": "logs",
 
