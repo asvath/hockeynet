@@ -49,8 +49,8 @@ def iou_xyxy(a: Tuple[float, float, float, float], b: Tuple[float, float, float,
     :param b: second box as (x1, y1, x2, y2)
     :return: IoU score between 0.0 and 1.0
     """
-    ax1, ay1, ax2, ay2 = a # (x1, y1) : top-left corner
-    bx1, by1, bx2, by2 = b # (x2, y2) : bottom-right corner
+    ax1, ay1, ax2, ay2 = a # (x1, y1) : top-left corner, (x2, y2) : bottom-right corner
+    bx1, by1, bx2, by2 = b
     # find intersection rectangle
     ix1, iy1 = max(ax1, bx1), max(ay1, by1) # left edge of overlap
     ix2, iy2 = min(ax2, bx2), min(ay2, by2) # right edge of overlap
@@ -58,6 +58,8 @@ def iou_xyxy(a: Tuple[float, float, float, float], b: Tuple[float, float, float,
     inter = iw * ih
     area_a = (ax2 - ax1) * (ay2 - ay1)
     area_b = (bx2 - bx1) * (by2 - by1)
+    if ax2 < ax1 or ay2 < ay1 or bx2 < bx1 or by2 < by1:
+        print("Invalid box:", a, b)
     union = area_a + area_b - inter
     return inter / union if union > 0 else 0.0
 
@@ -93,24 +95,12 @@ def closest_box(target_xywh: Tuple[float, float, float, float],
     return best_i
 
 
-def expand_blade_toward_stick(blade_xywh: Tuple[float, float, float, float],
-                               stick_xywh: Tuple[float, float, float, float],
-                               alpha: float = 0.35) -> Tuple[float, float, float, float]:
+def pad_xywh(box_xywh: Tuple[float, float, float, float],pad: float = 8.0) -> Tuple[float, float, float, float]:
     """
-    Expand a stick blade bounding box toward its associated stick shaft
-    :param blade_xywh: blade box as (x, y, w, h)
-    :param stick_xywh: stick box as (x, y, w, h)
-    :param alpha: expansion factor (0=blade only, 1=full union)
-    :return: expanded box as (x, y, w, h)
+    Adds padding to a bbox in xywh format
+    :param box_xywh: bbox as (x, y, w, h)
+    :param pad: padding to add to bbox
+    :return: expanded bbox as (x, y, w, h)
     """
-    bx1, by1, bx2, by2 = xywh_to_xyxy(*blade_xywh)
-    sx1, sy1, sx2, sy2 = xywh_to_xyxy(*stick_xywh)
-
-    # partial union: move blade edges toward stick edges
-    nx1 = bx1 + alpha * (min(bx1, sx1) - bx1)
-    nx2 = bx2 + alpha * (max(bx2, sx2) - bx2)
-
-    # y-align with stick (include shaft thickness near blade)
-    ny1, ny2 = sy1, sy2
-
-    return xyxy_to_xywh(nx1, ny1, nx2, ny2)
+    x, y, w, h = box_xywh
+    return x - pad, y - pad, w + 2 * pad, h + 2 * pad
