@@ -11,5 +11,7 @@
   "LOGS_DIR": "logs",
 
   "DATASET_METADATA": "config/dataset_metadata.json",
-  "COCO_ANNOTATIONS" : "data/processed/annotations/coco_annotations.json"
+  "COCO_ANNOTATIONS" : "data/processed/annotations/coco_annotations.json",
+
+  "SAM3_PROMPTS_DIR": "models/sam3/prompts"
 }
