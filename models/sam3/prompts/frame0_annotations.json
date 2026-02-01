@@ -1,244 +1,209 @@
 {
-    "boxes": [
-        {
-            "id": "I",
-            "type": "mask",
-            "label": "big circle",
-            "x": "1741",
-            "y": "1017.5",
-            "width": "358",
-            "height": "125",
-            "area": "31159",
-            "mask": "eJx9UMsSgjAM/KUEDt7UL+hCqzgDozi+ZnzU/z9aHoU2gGVIk80mmyavz1de1TknKgGDOwsmGm38hZjMN7HHwg4hHseyIv57D8kcKpDR729nfEwMX0VMgvfXDl7fTWb8iSKn1unMK4XsAW9q2tFIzuEzc0qTs8ScVolsu6EADbfXvkmNkX/cXGe/+r5fSGnLpI7Qn8wYEYXWURmNCtbSWmsUKq347fy9hlEpoeCXpTs9NEqUlm70bNgHS5vMYJs5pjGo0Tg7gxO+H7qQXvI0fpIet4A=",
-            "attributes": {}
-        },
-        {
-            "id": "L",
-            "type": "mask",
-            "label": "hockey stick",
-            "x": "1056.5",
-            "y": "542.5",
-            "width": "65",
-            "height": "35",
-            "area": "550",
-            "mask": "eJwLScwINDROCTQ08THyN4RAA38DA0MDAzAHRAH5QC6EAZQB8RAYToDE0YQMICSaDMIYsGWGfoZ+Rv7ZudHZBgAlUyDX",
-            "attributes": {}
-        },
-        {
-            "id": "O",
-            "type": "mask",
-            "label": "hockey stick",
-            "x": "1142.5",
-            "y": "521.5",
-            "width": "163",
-            "height": "49",
-            "area": "806",
-            "mask": "eJxVUEEOgkAM/FKHhZMP8KC2C6LR6EE0wWiE/v9mu+AGm810Mp20k73ctEF1rxF2gUEkhSEYEKNiaOUcAqdJJDYT+zTPFzUZDbMMElpvx5HLpkbuOnKINTgqQyPQKPMQEfbKu09E2SpvrFertMh3kF/2cLa+O/QG73MKkQzTtYLng79c8jg+qbi+TrOU3dP7j7+kJEvN/6Dthp6+VY9K+w==",
-            "attributes": {}
-        },
-        {
-            "id": "M",
-            "type": "mask",
-            "label": "hockey stick",
-            "x": "1228",
-            "y": "773.5",
-            "width": "144",
-            "height": "25",
-            "area": "1222",
-            "mask": "eJzLywsOMzRMDTQ09TH2M/QDYn8wNPA3MDQwMAAxDA39DMEsCDYwACkAkQZgAKMhAKwBOxuJQpVD4mBjobENUIxENRfdFmTlmOYj1EMUIatFsA39jHwiQmNTDABZ/0Ac",
-            "attributes": {}
-        },
-        {
-            "id": "N",
-            "type": "mask",
-            "label": "hockey stick",
-            "x": "271.5",
-            "y": "662.5",
-            "width": "157",
-            "height": "59",
-            "area": "1161",
-            "mask": "eJxtUEkOgCAM/NIMJD6jjTF6UC+GqBf/fxZEFJEm3aZ7XT833FoaIagACC+9FTTFCnXqVtjlGJVqAhjjKRN3qqaiB6rECi8DK+6vVzbhW5JrpM0i0d91kcZWr5W4GBkegXCqUJZhdzwB2D1Bog==",
-            "attributes": {}
-        },
-        {
-            "id": "J",
-            "type": "mask",
-            "label": "big circle",
-            "x": "1023.5",
-            "y": "693.5",
-            "width": "1109",
-            "height": "247",
-            "area": "20688",
-            "mask": "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",
-            "attributes": {}
-        },
-        {
-            "id": "Q",
-            "type": "mask",
-            "label": "skate",
-            "x": "1217.5",
-            "y": "568.5",
-            "width": "27",
-            "height": "23",
-            "area": "391",
-            "mask": "eJxLiUkLNzRMDTQ09Tb2MwJBf0MDA39DfyM/QzDLwNDfAIhRIFCRka+RX25wWpoBACruENQ=",
-            "attributes": {}
-        },
-        {
-            "id": "R",
-            "type": "mask",
-            "label": "skate",
-            "x": "184.5",
-            "y": "714.5",
-            "width": "25",
-            "height": "25",
-            "area": "520",
-            "mask": "eJwLC04zNUsINDT1MfY18jPyMzQw8DfyB2MgMASTEGDo728IEfI39gtPzMgwBADBVg6o",
-            "attributes": {}
-        },
-        {
-            "id": "S",
-            "type": "mask",
-            "label": "skate",
-            "x": "10.5",
-            "y": "755",
-            "width": "21",
-            "height": "36",
-            "area": "617",
-            "mask": "eJwLTTfIN8gMMDQAAX9DEISwDP0NDAzBQkZ+xr4mPsY+xn4mDpl5fmaZIcl5hgCNyw50",
-            "attributes": {}
-        },
-        {
-            "id": "T",
-            "type": "mask",
-            "label": "skate",
-            "x": "1429",
-            "y": "890.5",
-            "width": "34",
-            "height": "31",
-            "area": "671",
-            "mask": "eJxLC0qKMzRMCzQ09TL2N/Qz9jX0N/IDYiDbyN/AwMAfRBqCsJ8hkAKxwHyQEqAkUAMQ+5m7G/vGBibbAwAMSBOD",
-            "attributes": {}
-        },
-        {
-            "id": "U",
-            "type": "mask",
-            "label": "skate",
-            "x": "94",
-            "y": "731",
-            "width": "32",
-            "height": "28",
-            "area": "637",
-            "mask": "eJyLyU8yMosPNDTxNfYz8jM0MARiA38jCOlv4A+iwaIgFkQSjEFK/A39jH2Mvc28QiJTsg0Brd0SUg==",
-            "attributes": {}
-        },
-        {
-            "id": "V",
-            "type": "mask",
-            "label": "skate",
-            "x": "1312.5",
-            "y": "596.5",
-            "width": "21",
-            "height": "31",
-            "area": "509",
-            "mask": "eJwLzMyNMjRLCDS0ive39jXyNzAwhGIDQz9DAyjXz8jPyNfI18TL3DMhKDXZAACB8g3R",
-            "attributes": {}
-        },
-        {
-            "id": "W",
-            "type": "mask",
-            "label": "skate",
-            "x": "1498.5",
-            "y": "506",
-            "width": "17",
-            "height": "14",
-            "area": "188",
-            "mask": "eJwLzw9ONDSPDzQ09jPyNzAw9DfwNwQScGDoZwSEJt4Bwcm2AP1FCvc=",
-            "attributes": {}
-        },
-        {
-            "id": "X",
-            "type": "mask",
-            "label": "skate",
-            "x": "1136",
-            "y": "570",
-            "width": "32",
-            "height": "22",
-            "area": "512",
-            "mask": "eJzLzswNMTROCTQ08gNDfwN/QwNDP0N/Iz9DAxAbCiCiyCIgrqG/ob+xt5lnVFxkpgEAv98SGA==",
-            "attributes": {}
-        },
-        {
-            "id": "Y",
-            "type": "mask",
-            "label": "skate",
-            "x": "1340",
-            "y": "898",
-            "width": "34",
-            "height": "34",
-            "area": "885",
-            "mask": "eJwLCU+JNrSODTQ08jXyM/I39DcEkgYGhn6GBgb+Rn6G/kAeSBTENgCKA+VQAFChh4WfsZ+pV3JuQpIBAA4VE0Y=",
-            "attributes": {}
-        },
-        {
-            "id": "Z",
-            "type": "mask",
-            "label": "skate",
-            "x": "1436",
-            "y": "501",
-            "width": "22",
-            "height": "14",
-            "area": "232",
-            "mask": "eJyLic2PMzRMCTQ09zbyN/Qz9Dc0AAFDfwMIAApBuEAJQz8jXxOfsJgkewBytQ0z",
-            "attributes": {}
-        },
-        {
-            "id": "b",
-            "type": "mask",
-            "label": "hockey puck",
-            "x": "1001.5",
-            "y": "560.5",
-            "width": "11",
-            "height": "7",
-            "area": "60",
-            "mask": "eJyLD8gOMDRODjQ09jcAA0Mw7W/kb+QTFROUZwAAkdYIig==",
-            "attributes": {}
-        },
-        {
-            "id": "e",
-            "type": "mask",
-            "label": "stick blade",
-            "x": "328.5",
-            "y": "682",
-            "width": "43",
-            "height": "20",
-            "area": "421",
-            "mask": "eJxLiQuxMkwPNDT0MzQw9IdAAwMQBgJ/QwgLSBv4GxhCaDAF5fmD5KE8A0OoQkMwaeSbGJaebAgATQIWqw=="
-        },
-        {
-            "id": "f",
-            "type": "mask",
-            "label": "stick blade",
-            "x": "1173.5",
-            "y": "774",
-            "width": "35",
-            "height": "24",
-            "area": "389",
-            "mask": "eJzLywsOMzRKDjQ08zX0M/Yz9IdBA0MDAwN/QwN/I38QBaOB4jAFBsgYSPrEBgdkGAAAR54T9g=="
-        },
-        {
-            "id": "g",
-            "type": "mask",
-            "label": "stick blade",
-            "x": "1034.5",
-            "y": "553",
-            "width": "21",
-            "height": "14",
-            "area": "181",
-            "mask": "eJwLTswINDRNCjQ09jP0N/IzMDD0NzQAIgN/MBMIDQwgfCD2M/YNjMrKMQAAaykNWA=="
-        }
-    ],
-    "height": 1080,
-    "key": "shl_hv71_v_tik_0000.jpg",
-    "width": 1920
+  "image": {
+    "filename": "shl_hv71_v_tik_0000_jpg.rf.WKunWFZJbWf3eUdiuR8y.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  "annotations": [
+    {
+      "id": 1,
+      "label": "big circle",
+      "x": 1562,
+      "y": 955,
+      "width": "358",
+      "height": "125",
+      "area": 44750,
+      "mask": "Q_`c17_Q12N2O1O1N2O1O1O100O1O100O1O1O1O1O1O1O1O1O100O1O1O1O1O100O1O1O1O1O1O1O100O100O1O1O100O1O100O1O100O100O1O1O1O1O100O100O1O100O100O1O1O100O100O100O100O10000O100OO20O100O100O10000O100O100O100O10000O1O100O1000000O1000O10O100000001O000O100O01000O1000000O10000O10000O10000O10000O10000O100O10000O10O10O100O10000O100O1000000000000O1000000000001O0O0100000O1000000O10000O1000000O100000000O10000O101O0O1000O010000O10000O10001O0O10000000000O10000000000000000000000000000O10000000000O10000000000O10000000000000000O10000000000O101O00000O10000000O10O1000000000001N1000000000O010000000000O10000000000000O1000O101O0000000000O100000O01001O00000O1000000000000O101O0000000000000000000O10O100000000000O10000000000000]NSRO[Omm0>RROVN3[1km0>UROSN30OV1jm0e0fROZOZm0d0iRO[OWm0?PSO@Pm0>SSO_OPm0>TSO^Onl0b0RSO^Onl0b0RSO^Onl0b0RSO^ORO"
+    },
+    {
+      "id": 2,
+      "label": "hockey stick",
+      "x": 1024,
+      "y": 525,
+      "width": "65",
+      "height": "35",
+      "area": 2275,
+      "mask": "TahQ13dQ14L2O1O1O1O10O00100O1O1O00O10O01000O10O0001O010O010O010O0010O0010O1O01O010O0010O0010O00010O01O01O010O0010O010O0001O01O1O101N1N2Okm[k0"
+    },
+    {
+      "id": 3,
+      "label": "hockey stick",
+      "x": 1061,
+      "y": 497,
+      "width": "163",
+      "height": "49",
+      "area": 7987,
+      "mask": "[`oR15bQ13M3N100O2N101N11O0O2O1O00001O0O1O100000O2O10N2N1N2O1O1O00001O000000000000O10000O101O000000010O0GLnnN4RQ1LnnN4RQ1LonN3PQ1NPoN1oP11RoNNmP13SoNMlP14ToNKlP15;01O0010O0010N201N100OaUf0OajYO1O1O1O001O000002N00010O00001O000OcVg02\\iXO00001O1O1O001O01O01O00001O0000000001O00000000010O0000001O00001O0OTamf0"
+    },
+    {
+      "id": 4,
+      "label": "hockey stick",
+      "x": 1156,
+      "y": 761,
+      "width": "144",
+      "height": "25",
+      "area": 3600,
+      "mask": "nnSV11eQ15L3N1N3N1O1O1O10O01000O10O11N100O100O100O001O1O001O0000001O000000000000O10O10000000O10O10000000O100000O10000000O10O100000000O10O100000O10O100000O10O10000000O10O10000000O010000000O1000O100000O100000O100000O1000000000O01000000000000O10O100000O1000O100000O010000O01000000000O0100000001N2LXU]d0"
+    },
+    {
+      "id": 5,
+      "label": "hockey stick",
+      "x": 193,
+      "y": 633,
+      "width": "157",
+      "height": "59",
+      "area": 9263,
+      "mask": "cU\\61fQ12N101O00010O001O010O01N3N1O[Se03alZO1O20O01O001O00010O0010O010O01O01O010O0010O010O0010O010O01O01O010O010O01O01O010O01O010O010O010O01O010O010O010O010O0010O010O0010O001O010O00100O010O01O010O001O010O001O0000010O000000001N1000000O10O010000O10O010O010O0100O010O010O010O02N100O1O2N1NaVgc1"
+    },
+    {
+      "id": 6,
+      "label": "big circle",
+      "x": 469,
+      "y": 570,
+      "width": "1109",
+      "height": "247",
+      "area": 273923,
+      "mask": "RZ_?<YQ18J3L4L3L5L3N2N2N2N2N2N3L3O1N1O2N2N2NPO_POL`o01ePONYo01jPOOTo01oPONPo00SQOOln00WQO0gn0O]QO0an0OcQO0[n0NiQO1Wn0OjQO1Tn0OnQO0Rn0OPRO1nm0OSRO2km0MYRO2em0N]RO1cm0N^RO3`m0NaRO1_m0NcRO2[m0NgRO1Xm0OjRO1Um0NlRO2Sm0NoRO2Pm0MQSO3nl0NSSO2ll0MVSO3il0LYSO4el0L]SO3bl0M`SO3_l0MbSO2]l0NdSO3[l0MfSO2Zl0MgSO4Wl0MiSO3Vl0MlSO3Sl0MmSO4Ql0LQTO3ok0MQTO3nk0MTTO3kk0MUTO3kk0LWTO4gk0MZTO3ek0L]TO3bk0N^TO2bk0M_TO4_k0MbTO2^k0McTO3]k0MdTO3Zk0MgTO3Yk0MhTO3Wk0LjTO4Uk0MlTO2Tk0NlTO3Sk0MnTO2Qk0NQUO2nj0MTUO2kj0OVUO1ij0OWUO1ij0NXUO2gj0OYUO2fj0N[UO1ej0N\\UO3bj0N^UO2bj0M`UO2`j0N`UO3^j0MdUO2\\j0NdUO2\\j0NeUO2Yj0OgUO1Yj0NiUO2Vj0NjUO2Uj0OlUO1Sj0NnUO2Rj0NoUO1Pj0OQVO2ni0NRVO2mi0NUVO2ji0NVVO2ji0NVVO2ii0NXVO3gi0MZVO2fi0NZVO2fi0M[VO4ci0M]VO3ci0M^VO2bi0M_VO3`i0NaVO2^i0McVO3\\i0NdVO3[i0MfVO2Zi0NfVO2Yi0NiVO2Vi0NjVO2Vi0NkVO1Ui0NlVO3Ri0MoVO3Qi0MPWO2oh0OQWO1oh0OQWO2nh0MSWO3mh0MTWO2lh0NTWO3jh0MWWO3ih0MWWO3ih0MXWO3gh0MYWO3fh0M[WO3eh0M\\WO3ch0L^WO4ah0M_WO4`h0LaWO3_h0MaWO3_h0LbWO4]h0McWO4\\h0LdWO4\\h0LeWO3[h0MeWO3[h0LfWO5Xh0LiWO3Wh0MiWO3Wh0MjWO2Vh0MkWO4Sh0MmWO3Sh0MmWO3Sh0LoWO3Qh0MoWO4og0MQXO3og0MQXO3og0LRXO4ng0LRXO4mg0MTXO3kg0MUXO3kg0LVXO4jg0LVXO4jg0LVXO4ig0MXXO2hg0MYXO4fg0LZXO4fg0L[XO3eg0L\\XO4cg0M]XO3cg0M^XO3ag0M_XO3`g0N`XO2`g0MaXO3_g0MbXO3\\g0NdXO2\\g0NdXO2\\g0MfXO2Zg0NfXO3Xg0NhXO2Xg0NhXO2Xg0NiXO1Wg0OiXO1Vg0OkXO1Ug0OkXO2Tg0NlXO2Tg0NlXO2Sg0NoXO1Qg0OoXO1Qg0OoXO1Qg0OoXO2of0NRYO2nf0NRYO2nf0NSYO1mf0OSYO2lf0NTYO2lf0NTYO2kf0NWYO1if0OWYO2hf0NXYO2gf0OZYO0ff00ZYO0ff0O[YO2bf00_YOO`f02`YON`f02`YON`f02`YON`f02`YOO_f01aYOO_f00cYOO^f00bYO0^f00bYO1]f0OcYO1\\f00dYO0\\f0OfYO0Zf00fYO0Zf00fYO1Yf0OgYO1Yf0NhYO2Xf0NhYO2Xf0NiYO1Wf0OiYO1Wf0OiYO2Vf0NjYO2Vf0NjYO2Vf0NjYO3Uf0LlYO4Tf0LlYO4Tf0LmYO3Rf0NnYO2Rf0NnYO2Rf0MoYO4Pf0LPZO4Pf0LPZO4Pf0LQZO3oe0MQZO3oe0MQZO3oe0MQZO3oe0MRZO2ne0MSZO4le0LTZO4ke0MUZO3ke0MUZO3ke0MVZO2je0MWZO3ie0MWZO4he0LXZO4he0LXZO4he0LXZO4ge0MYZO3ge0MZZO3ee0L\\ZO4de0L\\ZO4de0L\\ZO4ce0M]ZO3ce0M^ZO2be0N^ZO3ae0L`ZO4_e0MbZO2^e0NbZO2^e0NbZO2]e0OcZO1]e0OcZO1]e0OcZO1]e0OcZO1]e0OcZO2\\e0MeZO3[e0MfZO2Ze0NfZO2Ze0NfZO2Ze0NfZO2Ye0OgZO1Ye0NhZO2Xe0NhZO3We0MiZO3We0MiZO3We0MjZO2Ve0NjZO2Ve0NjZO2Ve0NjZO2Ue0OkZO1Ue0NlZO3Se0MnZO2Re0NnZO2Re0NnZO2Re0NnZO2Qe0OoZO1Qe0OoZO1Qe0OP[O1od0NR[O2nd0NR[O2nd0NR[O2nd0NR[O2nd0NR[O2nd0NS[O1md0NT[O3jd0NV[O2jd0NV[O2jd0NV[O2jd0NV[O2jd0MW[O3id0MX[O3gd0MY[O3gd0MY[O3gd0MY[O3gd0MY[O3gd0MZ[O2fd0NZ[O2fd0NZ[O3ed0M[[O3ed0M[[O3ed0M\\[O2cd0O][O1cd0O][O1cd0N^[O2bd0N^[O3ad0M_[O3ad0M_[O3`d0N`[O2`d0N`[O2`d0N`[O2`d0N`[O3_d0Mb[O2^d0Nb[O2]d0Oc[O1]d0Nd[O2\\d0Nd[O2\\d0Nd[O3[d0Me[O3[d0Me[O3[d0Me[O3[d0Me[O3[d0Me[O3Zd0Nf[O2Zd0Nf[O2Zd0Ng[O1Yd0Og[O1Yd0Og[O2Wd0Oi[O1Wd0Oi[O1Wd0Nj[O2Vd0Nj[O2Vd0Nj[O2Vd0Nk[O1Ud0Ok[O1Ud0Ok[O1Td00l[O0Td00l[O0Td00l[O0Sd00n[O0Rd00n[O0Qd01o[OOQd01P\\ONPd02P\\ONPd02P\\OOoc01Q\\OOoc01Q\\OOoc02P\\ONPd02P\\ONPd02P\\ONPd01Q\\OOoc01Q\\OOoc01Q\\OOPd00Q\\OOoc01Q\\OOoc01Q\\OOoc01Q\\O0nc00R\\O0nc00R\\O0nc0OS\\O1mc0OS\\O1nc0NR\\O2mc0OS\\O1mc0OS\\O1mc0NT\\O2lc0NU\\O1kc0OU\\O1kc0NV\\O2ic0OW\\O1ic0OW\\O1jc0NV\\O2jc0NV\\O3ic0MW\\O3ic0MW\\O3ic0MX\\O2hc0NX\\O2hc0NX\\O2hc0NX\\O2hc0NX\\O2hc0NX\\O2gc0OY\\O1gc0NZ\\O2fc0NZ\\O3ec0M[\\O3ec0M[\\O3ec0M[\\O3fc0LZ\\O4fc0LZ\\O4fc0LZ\\O4fc0LZ\\O4fc0LZ\\O4fc0L[\\O3ec0M[\\O3ec0M[\\O3ec0M[\\O3ec0M[\\O3dc0N\\\\O2dc0N\\\\O3cc0M]\\O3cc0M]\\O3cc0M]\\O3cc0M^\\O2bc0N^\\O2bc0N^\\O2bc0N^\\O2bc0M_\\O3ac0M_\\O3ac0M_\\O3ac0M_\\O3ac0M_\\O3ac0M_\\O3`c0N`\\O3_c0Ma\\O3_c0Mb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O2^c0Nb\\O3]c0Mc\\O3]c0Mc\\O3\\c0Nd\\O2\\c0Nd\\O2\\c0Nd\\O2\\c0Nd\\O2\\c0Me\\O3[c0Me\\O3[c0Me\\O3[c0Me\\O3[c0Me\\O3[c0Me\\O4Zc0Lf\\O4Zc0Lf\\O4Zc0Lg\\O3Yc0Mg\\O3Yc0Mg\\O3Yc0Mg\\O3Xc0Nh\\O2Xc0Nh\\O2Xc0Nh\\O2Xc0Nh\\O2Xc0Nh\\O2Xc0Nh\\O2Xc0Nh\\O2Xc0Mi\\O3Wc0Mj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Oi\\O1Wc0Oi\\O1Wc0Oi\\O1Wc0Nj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Nj\\O2Vc0Nk\\O1Uc0Ok\\O1Uc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O2Tc0Nl\\O3Sc0Mm\\O3Sc0Mm\\O3Sc0Nl\\O2Tc0Nm\\O1Sc0Om\\O1Sc0Om\\O1Sc0Om\\O1Sc0Om\\O1Sc0Om\\O1Rc00n\\O0Rc00n\\O0Rc00n\\O0Rc00n\\O0Rc0Oo\\O1Qc0Oo\\O1Qc0Oo\\O2Pc0NQ]O1ob0OQ]O1ob0OQ]O1ob0OQ]O1Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0NP]O2Pc0NP]O2Pc0NP]O2Pc0NP]O2Pc0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O4lb0LT]O4lb0LT]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0LR]O4nb0MR]O2nb0NR]O2nb0NR]O2nb0NR]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O3mb0MS]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2nb0NR]O2ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3ob0MQ]O3Pc0LP]O4Pc0LP]O4Pc0LP]O4Pc0LP]O4Pc0LP]O4Pc0Lo\\O5Qc0Ko\\O5Rc0Jn\\O6Rc0Jn\\O6Rc0Jn\\O6Rc0Jn\\O6Rc0Km\\O5Sc0Km\\O5Sc0Km\\O5Sc0Km\\O5Tc0Jl\\O6Tc0Im\\O7Sc0Im\\O7Sc0Hn\\O8Rc0Hn\\O8Rc0Go\\O9Xj000000000000000O10000000000000000000000000000000O10001O01N10000000eNKSQO5mn0KSQO5mn0KSQO5on0IQQO7on0IQQO7Po0HPQO8Po0HPQO8XP10O100000000000O1000000000000000000000000000000O1000000000000000000000000000000000O100000O1000000000O1000O1000000000000000O100000000000000000O10O1000000000000000000000000000000O100000000000000000O10000000000000000000O10O1000000O0100000000000O10000000000O0100000000000O010000000000000000O01000000000000O0100000000000O100000000000O101O00O2O000000001N1O2OTd?0j[@3N2O0000000000010O00000010O0000001O000001O01O000001O0000010O000001O0001O01O000001O0001O0001O010O0000010O000000010O00000010O0001O00010O000001O01O00000010O0000010O00000010O001O000XSOGRh09mWOIQh07nWOKQh05oWOLPh04PXOLPh05nWOLRh04nWOLSh03mWONRh02mWOOSh02lWONTh02lWONTh02lWONUh01jWO0Vh01iWOOWh01iWOOXh01gWONZh02fWONZh02fWON[h02cWOO]h01cWON^h02bWON^h02bWON_h02_WOOah01_WOOah02]WOOdh00\\WOOeh01ZWO0gh00XWO0hh00XWO0hh00WWO0kh0OUWO1kh0OUWO1kh00TWO0mh0OSWO0nh00QWO1oh0OQWO1Pi0OnVO1Si0OmVO1Si0OlVO2Ui0NjVO1Wi0OhVO2Xi0OgVO0[i0OdVO2\\i0NdVO2\\i0OcVO0^i00aVO1`i0N`VO2`i0O_VO0bi00]VO1di0O[VO1ei0O[VO1ei0OZVO1gi00XVO0ii0OWVO1ii00UVO0li00TVO0mi00QVO0Pj00PVO0Pj01nUOOSj01mUOOTj01jUOOWj01iUOOXj01gUOOYj01fUOO\\j01cUOO]j01cUOO]j02aUONaj01_UOOaj02]UONej01ZUO0fj00ZUO0fj01XUOOjj00UUO1kj00TUO0mj0ORUO1oj0OQUO1oj00PUOORk00nTO0Rk01lTOOVk00jTO0Vk00jTO0Wk00gTO0Zk00fTO0[k00cTO0^k00bTO0^k01aTONak01^TO0bk01]TONdk03ZTONgk01YTOOgk02WTONjk03UTOMlk02TTONlk03RTONok01QTONPl03nSONSl02lSONTl03jSOMXl02gSOOYl02fSOM\\l02cSOO]l02aSOO`l01^SOOcl01\\SO0el00ZSOOgl02WSONkl02TSONll02SSONol02oROORm01lROOUm02iROOXm01fROO[m02cROO^m00aRO0am00]RO1cm00[RO0gm01VROOkm02SROOnm01PROORn02jQOOWn02gQOOZn01dQOO^n01YQOZO]Oi0[o0MUQO8mn02dPO1^o0T10O2N2N2N2N2N2N1O2N2N3M2N3M2N2N3M3M3L4L4L3L6InPX;"
+    },
+    {
+      "id": 7,
+      "label": "skate",
+      "x": 1204,
+      "y": 557,
+      "width": "27",
+      "height": "23",
+      "area": 621,
+      "mask": "d\\fW11eQ15K3N2N2N2O100O1O2N1O100O01O001O1O1O1O1O1O1O1N2O2M2NmSff0"
+    },
+    {
+      "id": 8,
+      "label": "skate",
+      "x": 172,
+      "y": 702,
+      "width": "25",
+      "height": "25",
+      "area": 625,
+      "mask": "VSf56`Q15L3M2N2N100O2O0O2O00001O00000000001OO10001O0O3NWahh1"
+    },
+    {
+      "id": 9,
+      "label": "skate",
+      "x": 0,
+      "y": 737,
+      "width": "21",
+      "height": "36",
+      "area": 756,
+      "mask": "Ug0o0iP100000O1O1O10000O11O00100O1O2N3M4L3L3N4@inN6iTcn1"
+    },
+    {
+      "id": 10,
+      "label": "skate",
+      "x": 1412,
+      "y": 875,
+      "width": "34",
+      "height": "31",
+      "area": 1054,
+      "mask": "fRb^11fQ15J3O1N3M1O2N1O2O1N2O000O2O001O001N11O01O00001O01O2O0O2N3M2N3N7G3M]Qc?"
+    },
+    {
+      "id": 11,
+      "label": "skate",
+      "x": 78,
+      "y": 717,
+      "width": "32",
+      "height": "28",
+      "area": 896,
+      "mask": "\\ob26_Q14M3N2N101N100O2N100O2O0O100O101N1O1001N100O100O1O2N1O1N3L3K6JTYdk1"
+    },
+    {
+      "id": 12,
+      "label": "skate",
+      "x": 1302,
+      "y": 581,
+      "width": "21",
+      "height": "31",
+      "area": 651,
+      "mask": "QimZ16`Q1:_O;M2O001O001O0001N10001O001N2N2M2M4J7I`Rec0"
+    },
+    {
+      "id": 13,
+      "label": "skate",
+      "x": 1490,
+      "y": 499,
+      "width": "17",
+      "height": "14",
+      "area": 238,
+      "mask": "WoSa17_Q13N2O001O0O11O00000000001N2N2N4KPSc="
+    },
+    {
+      "id": 14,
+      "label": "skate",
+      "x": 1120,
+      "y": 559,
+      "width": "32",
+      "height": "22",
+      "area": 704,
+      "mask": "kimT13dQ12N2N2N2O0O101N1O2N100O100000000O101N100O1000000001N101O1O3K6IZ^Yi0"
+    },
+    {
+      "id": 15,
+      "label": "skate",
+      "x": 1323,
+      "y": 881,
+      "width": "34",
+      "height": "34",
+      "area": 1156,
+      "mask": "TWd[1;]Q12M2N2O1O1N2O001N100O2N1O2O0O1O1O2N10001O0000000000000001N1H8N3N5Jcm`b0"
+    },
+    {
+      "id": 16,
+      "label": "skate",
+      "x": 1425,
+      "y": 494,
+      "width": "22",
+      "height": "14",
+      "area": 308,
+      "mask": "\\]o^11dQ17K2O1N1O1000001O00000001N10001O0O101N2M4LV\\b?"
+    },
+    {
+      "id": 17,
+      "label": "hockey puck",
+      "x": 996,
+      "y": 557,
+      "width": "11",
+      "height": "7",
+      "area": 77,
+      "mask": "_PkP13cQ13O0000001O0000O2O2LZ\\Rn0"
+    },
+    {
+      "id": 18,
+      "label": "stick blade",
+      "x": 307,
+      "y": 672,
+      "width": "43",
+      "height": "20",
+      "area": 860,
+      "mask": "d^T:1gQ11N101O1O1O1O001O00000O101O000O100O010O100O10O10O010O10O01O010O010O0100O100O1O100O2MaVgc1"
+    },
+    {
+      "id": 19,
+      "label": "stick blade",
+      "x": 1156,
+      "y": 762,
+      "width": "35",
+      "height": "24",
+      "area": 840,
+      "mask": "nnSV12cQ16M1N3N1O1O1O1O1O01000O10O2O0O100O2O0O10O01O1O1O1O001O001O001O00001L]SPh0"
+    },
+    {
+      "id": 20,
+      "label": "stick blade",
+      "x": 1024,
+      "y": 546,
+      "width": "21",
+      "height": "14",
+      "area": 294,
+      "mask": "SahQ15bQ13N1O2N001O10O100O001O1O1O000O100O100N3MQZjl0"
+    }
+  ]
 }

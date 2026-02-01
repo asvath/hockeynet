@@ -14,7 +14,7 @@ prompts_dir = PROJECT_ROOT / PATHS["SAM3_PROMPTS_DIR"]
 with open(prompts_dir / "frame0_annotations.json", "r") as f:
     data = json.load(f)
 
-boxes = data["boxes"]
+boxes = data["annotations"]
 
 classes = ["big circle", "skate", "hockey stick", "stick blade", "hockey puck"]
 # --- group boxes by label ---
