@@ -1,0 +1,66 @@
+# add positive and negative examples
+text = "hockey puck"
+
+response = predictor.handle_request(
+    request=dict(
+        type="add_prompt",
+        session_id=session_id,
+        frame_index=frame_idx,
+        text=text,
+        bboxes=[
+            # --- positive ---
+            [1001.5, 560.5, 11, 7],          # hockey puck (positive)
+
+            # --- negatives: face-off regions ---
+            [1023.5, 693.5, 1109, 247],      # face-off (negative)
+            [1741, 1017.5, 358, 125],        # face-off (negative)
+
+            # --- negatives: ALL hockey sticks ---
+            [1056.5, 542.5, 65, 35],         # hockey stick (negative)
+            [1142.5, 521.5, 163, 49],        # hockey stick (negative)
+            [1228, 773.5, 144, 25],          # hockey stick (negative)
+            [271.5, 662.5, 157, 59],         # hockey stick (negative)
+
+            # --- negatives: ALL skates ---
+            [1217.5, 568.5, 27, 23],         # skate (negative)
+            [184.5, 714.5, 25, 25],          # skate (negative)
+            [10.5, 755, 21, 36],             # skate (negative)
+            [1429, 890.5, 34, 31],           # skate (negative)
+            [94, 731, 32, 28],               # skate (negative)
+            [1312.5, 596.5, 21, 31],         # skate (negative)
+            [1498.5, 506, 17, 14],           # skate (negative)
+            [1136, 570, 32, 22],             # skate (negative)
+            [1340, 898, 34, 34],             # skate (negative)
+            [1436, 501, 22, 14],             # skate (negative)
+
+            # --- negatives: stick blades (expanded to include some stick) ---
+            [320.5, 674.0, 59.0, 36.0],        # stick blade (neg) e expanded w/ stick N
+            [1165.5, 766.0, 51.0, 40.0],       # stick blade (neg) f expanded w/ stick M
+            [1026.5,545.0,37.0,30.0],       # stick blade (neg) g expanded w/ stick L
+        ],
+
+      bbox_labels: [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    )
+)
+
