@@ -4,13 +4,11 @@
   "season": "2025-2026",
   "league": "SHL",
   "country": "Sweden",
-
   "home_arena": {
-  "name": "Husqvarna Garden",
-  "city": "Jönköping",
-  "country": "Sweden"
+    "name": "Husqvarna Garden",
+    "city": "Jönköping",
+    "country": "Sweden"
   },
-
   "players": [
     {
       "number": 80,
@@ -26,7 +24,6 @@
       "status": "Active",
       "notes": []
     },
-
     {
       "number": 30,
       "name": "Lassi Lehtinen",
@@ -38,6 +35,20 @@
       "weight_lb": 176,
       "shot": "L",
       "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 60,
+      "name": "Felix Sandström",
+      "position": "G",
+      "roles": ["Goaltender"],
+      "age": 29,
+      "born": 1997,
+      "height_in": 74,
+      "weight_lb": 212,
+      "shot": "L",
+      "contract": "25/26",
       "status": "Active",
       "notes": []
     },
@@ -56,7 +67,76 @@
       "status": "Active",
       "notes": ["Captain"]
     },
-
+    {
+      "number": 6,
+      "name": "Karl Annborn",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 18,
+      "born": 2007,
+      "height_in": 73,
+      "weight_lb": 192,
+      "shot": "R",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 55,
+      "name": "Andreas Borgman",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 30,
+      "born": 1995,
+      "height_in": 72,
+      "weight_lb": 201,
+      "shot": "L",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 44,
+      "name": "Hugo Fransson",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 21,
+      "born": 2004,
+      "height_in": 72,
+      "weight_lb": 176,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 78,
+      "name": "Malte Gustafsson",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 17,
+      "born": 2008,
+      "height_in": 76,
+      "weight_lb": 201,
+      "shot": "L",
+      "contract": "Junior",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 19,
+      "name": "Niklas Hansson",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 31,
+      "born": 1995,
+      "height_in": 72,
+      "weight_lb": 181,
+      "shot": "R",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": ["Alternate"]
+    },
     {
       "number": 82,
       "name": "Santeri Hatakka",
@@ -69,6 +149,34 @@
       "shot": "L",
       "contract": "26/27",
       "status": "Injured",
+      "notes": []
+    },
+    {
+      "number": 8,
+      "name": "Lucas Lagerberg Hoen",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 21,
+      "born": 2004,
+      "height_in": 74,
+      "weight_lb": 190,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 61,
+      "name": "Axel Rindell",
+      "position": "D",
+      "roles": ["Defense"],
+      "age": 25,
+      "born": 2000,
+      "height_in": 72,
+      "weight_lb": 192,
+      "shot": "R",
+      "contract": "25/26",
+      "status": "Active",
       "notes": []
     },
 
@@ -86,7 +194,104 @@
       "status": "Active",
       "notes": []
     },
-
+    {
+      "number": 17,
+      "name": "Isac Brännström",
+      "position": "F",
+      "roles": ["LW", "RW"],
+      "age": 27,
+      "born": 1998,
+      "height_in": 70,
+      "weight_lb": 176,
+      "shot": "L",
+      "contract": "25/26",
+      "status": "Injured",
+      "notes": []
+    },
+    {
+      "number": 18,
+      "name": "Oscar Davidsson",
+      "position": "F",
+      "roles": ["LW", "C"],
+      "age": 19,
+      "born": 2006,
+      "height_in": 72,
+      "weight_lb": 187,
+      "shot": "L",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 24,
+      "name": "Hampus Eriksson",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 29,
+      "born": 1996,
+      "height_in": 78,
+      "weight_lb": 212,
+      "shot": "L",
+      "contract": "25/26",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 91,
+      "name": "Aleksi Heponiemi",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 27,
+      "born": 1999,
+      "height_in": 70,
+      "weight_lb": 154,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 28,
+      "name": "Justin Kloos",
+      "position": "F",
+      "roles": ["C", "RW"],
+      "age": 32,
+      "born": 1993,
+      "height_in": 69,
+      "weight_lb": 174,
+      "shot": "R",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 23,
+      "name": "Victor Laz",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 29,
+      "born": 1996,
+      "height_in": 72,
+      "weight_lb": 181,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 16,
+      "name": "Linus Lindström",
+      "position": "F",
+      "roles": ["C"],
+      "age": 28,
+      "born": 1998,
+      "height_in": 72,
+      "weight_lb": 165,
+      "shot": "L",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
     {
       "number": 46,
       "name": "Joona Luoto",
@@ -100,6 +305,118 @@
       "contract": "25/26",
       "status": "Active",
       "notes": ["Alternate"]
+    },
+    {
+      "number": 12,
+      "name": "Wille Magnertoft",
+      "position": "F",
+      "roles": ["C"],
+      "age": 19,
+      "born": 2006,
+      "height_in": 75,
+      "weight_lb": 179,
+      "shot": "L",
+      "contract": "Junior",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 71,
+      "name": "William Nilsson Ignberg",
+      "position": "F",
+      "roles": ["RW"],
+      "age": 24,
+      "born": 2001,
+      "height_in": 74,
+      "weight_lb": 198,
+      "shot": "R",
+      "contract": "25/26",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 96,
+      "name": "Nikola Pasic",
+      "position": "F",
+      "roles": ["LW", "RW"],
+      "age": 25,
+      "born": 2000,
+      "height_in": 70,
+      "weight_lb": 187,
+      "shot": "L",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 9,
+      "name": "Hugo Pettersson",
+      "position": "F",
+      "roles": ["LW"],
+      "age": 20,
+      "born": 2005,
+      "height_in": 72,
+      "weight_lb": 192,
+      "shot": "R",
+      "contract": "25/26",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 70,
+      "name": "Lukas Rousek",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 26,
+      "born": 1999,
+      "height_in": 71,
+      "weight_lb": 201,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 40,
+      "name": "Oskar Stål Lyrenäs",
+      "position": "F",
+      "roles": ["RW"],
+      "age": 27,
+      "born": 1998,
+      "height_in": 73,
+      "weight_lb": 185,
+      "shot": "R",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 21,
+      "name": "Mattias Tedenby",
+      "position": "F",
+      "roles": ["LW"],
+      "age": 35,
+      "born": 1990,
+      "height_in": 70,
+      "weight_lb": 168,
+      "shot": "L",
+      "contract": "25/26",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 41,
+      "name": "Riley Woods",
+      "position": "F",
+      "roles": ["LW"],
+      "age": 27,
+      "born": 1998,
+      "height_in": 70,
+      "weight_lb": 181,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
     }
   ]
 }

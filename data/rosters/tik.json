@@ -4,13 +4,11 @@
   "season": "2025-2026",
   "league": "SHL",
   "country": "Sweden",
-
   "home_arena": {
-  "name": "SCA Arena",
-  "city": "Timrå",
-  "country": "Sweden"
+    "name": "SCA Arena",
+    "city": "Timrå",
+    "country": "Sweden"
   },
-
   "players": [
     {
       "number": 30,
@@ -38,7 +36,7 @@
       "shot": "L",
       "contract": "25/26",
       "status": "Active",
-      "notes": ["Verified"]
+      "notes": []
     },
 
     {
@@ -81,7 +79,7 @@
       "shot": "L",
       "contract": "Loan",
       "status": "Active",
-      "notes": ["On Loan"]
+      "notes": []
     },
     {
       "number": 7,
@@ -165,7 +163,7 @@
       "shot": "L",
       "contract": "26/27",
       "status": "Active",
-      "notes": ["Veteran"]
+      "notes": []
     },
     {
       "number": 3,
@@ -179,7 +177,7 @@
       "shot": "R",
       "contract": "Junior",
       "status": "Active",
-      "notes": ["Prospect"]
+      "notes": []
     },
 
     {
@@ -194,7 +192,7 @@
       "shot": "R",
       "contract": "Junior",
       "status": "Active",
-      "notes": ["Prospect"]
+      "notes": []
     },
     {
       "number": 23,
@@ -225,6 +223,76 @@
       "notes": ["Alternate"]
     },
     {
+      "number": 15,
+      "name": "Olle Därth",
+      "position": "F",
+      "roles": ["Forward"],
+      "age": 18,
+      "born": 2007,
+      "height_in": 74,
+      "weight_lb": 194,
+      "shot": "L",
+      "contract": "Junior",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 12,
+      "name": "Linus Eriksson",
+      "position": "F",
+      "roles": ["C"],
+      "age": 19,
+      "born": 2006,
+      "height_in": 72,
+      "weight_lb": 190,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 18,
+      "name": "Eddie Genborg",
+      "position": "F",
+      "roles": ["LW", "RW"],
+      "age": 18,
+      "born": 2007,
+      "height_in": 74,
+      "weight_lb": 198,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 94,
+      "name": "Sebastian Hartmann",
+      "position": "F",
+      "roles": ["RW"],
+      "age": 31,
+      "born": 1994,
+      "height_in": 73,
+      "weight_lb": 187,
+      "shot": "R",
+      "contract": "27/28+1",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 26,
+      "name": "Anton Heikkinen",
+      "position": "F",
+      "roles": ["LW", "RW"],
+      "age": 25,
+      "born": 2000,
+      "height_in": 69,
+      "weight_lb": 176,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
       "number": 51,
       "name": "Anton Lander",
       "position": "F",
@@ -239,6 +307,62 @@
       "notes": ["Captain"]
     },
     {
+      "number": 27,
+      "name": "Ludvig Levinsson",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 24,
+      "born": 2001,
+      "height_in": 71,
+      "weight_lb": 176,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 10,
+      "name": "David Lilja",
+      "position": "F",
+      "roles": ["LW", "C"],
+      "age": 26,
+      "born": 2000,
+      "height_in": 71,
+      "weight_lb": 172,
+      "shot": "L",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 92,
+      "name": "Anton Lundmark",
+      "position": "F",
+      "roles": ["RW", "LW"],
+      "age": 24,
+      "born": 2001,
+      "height_in": 76,
+      "weight_lb": 192,
+      "shot": "R",
+      "contract": "27/28",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 14,
+      "name": "Emil Pettersson",
+      "position": "F",
+      "roles": ["W", "C"],
+      "age": 32,
+      "born": 1994,
+      "height_in": 74,
+      "weight_lb": 176,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
       "number": 91,
       "name": "Magnus Pääjärvi",
       "position": "F",
@@ -247,6 +371,48 @@
       "born": 1991,
       "height_in": 75,
       "weight_lb": 209,
+      "shot": "L",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 39,
+      "name": "William Sörbrand",
+      "position": "F",
+      "roles": ["C", "W"],
+      "age": 17,
+      "born": 2008,
+      "height_in": 75,
+      "weight_lb": 203,
+      "shot": "L",
+      "contract": "Junior",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 72,
+      "name": "Erik Walli Walterholm",
+      "position": "F",
+      "roles": ["RW", "LW"],
+      "age": 26,
+      "born": 1999,
+      "height_in": 73,
+      "weight_lb": 203,
+      "shot": "R",
+      "contract": "26/27",
+      "status": "Active",
+      "notes": []
+    },
+    {
+      "number": 57,
+      "name": "Anton Wedin",
+      "position": "F",
+      "roles": ["LW", "RW"],
+      "age": 32,
+      "born": 1993,
+      "height_in": 71,
+      "weight_lb": 194,
       "shot": "L",
       "contract": "26/27",
       "status": "Active",
