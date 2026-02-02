@@ -1,0 +1,32 @@
+{
+  "classes": [
+    {
+      "name": "hockey puck",
+      "score_threshold_detection": 0.3,
+      "new_det_thresh": 0.6,
+      "max_num_objects": 4
+    },
+    {
+      "name": "hockey player",
+      "score_threshold_detection": 0.7,
+      "new_det_thresh": 0.8,
+      "max_num_objects": 100
+    },
+    {
+      "name": "hockey stick",
+      "score_threshold_detection": 0.7
+    },
+    {
+      "name": "referee",
+      "score_threshold_detection": 0.7
+    },
+    {
+      "name": "goalie",
+      "score_threshold_detection": 0.7
+    },
+    {
+      "name": "goal post",
+      "score_threshold_detection": 0.7
+    }
+  ]
+}
