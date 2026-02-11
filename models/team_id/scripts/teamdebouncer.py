@@ -15,7 +15,7 @@ class TeamDebouncer:
     This kills 1-frame flicker while keeping real changes responsive.
     """
     confirm_frames: int = 10
-    expire_after: Optional[int] = 90  # frames; set None to disable expiry, #at 30fps: 3 seconds
+    expire_after: Optional[int] = 300  # frames; set None to disable expiry, #at 30fps: 3 seconds
 
     stable_team: Dict[int, int] = field(default_factory=dict)
     pending_team: Dict[int, int] = field(default_factory=dict)

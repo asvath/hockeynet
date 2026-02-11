@@ -2,53 +2,50 @@
 Team clustering pipeline:
 Load masks -> decode RLE -> extract torsos -> colour features -> k-means -> canonicalize
 """
-import numpy as np
 import torch
-from sklearn.cluster import KMeans
 
 from models.sam3.scripts.visualization_utils import load_frame_by_index
 from models.team_id.scripts.team_features import (
     all_rle_to_masks,
-    extract_all_colour_features,
-    canonicalize_teams,
 )
+from models.team_id.scripts.teamassigner import TeamAssigner
+from models.team_id.scripts.teamdebouncer import TeamDebouncer
 from scripts.utils.config import load_paths, PROJECT_ROOT
 
 PATHS = load_paths()
 
 
-def cluster_frame(frame: np.ndarray, masks: np.ndarray, n_clusters=2, sep_thresh = 5):
-    """
-    Run full team-clustering pipeline on a single frame.
-    :param frame: (H, W, 3) BGR image
-    :param masks: (N, H, W) decoded boolean masks
-    :param n_clusters: number of teams
-    :param sep_thresh: (optional) threshold for separating teams
-    :return: canonicalized labels (N,)
-    """
-    # only 1 or no players
-    N = masks.shape[0]
-    if N < n_clusters:
-        return np.zeros(N, dtype=int)
+def classify_players_into_teams(game_name: str, players_results: dict):
 
-    # colour features from full masks
-    feats = extract_all_colour_features(frame, masks)
+    # initialize team assigner
+    teamassigner = TeamAssigner()
 
-    # k-means clustering into two teams
-    kmeans = KMeans(n_clusters=n_clusters, n_init="auto", random_state=0)
-    labels = kmeans.fit_predict(feats)
+    # initialize smoother
+    debouncer = TeamDebouncer(confirm_frames= 10, expire_after= 300)
 
-    centers = kmeans.cluster_centers_
-    sep = np.linalg.norm(centers[0] - centers[1])
+    # cluster all frames
 
-    # only one team visible, assign all to 0, can be fixed with temporal smoothing later
-    if sep < sep_thresh:
-        return np.zeros(N, dtype=int)
+    for frame_idx in range(len(players_results)):
 
-    # canonicalize so labels are consistent across frames
-    labels = canonicalize_teams(labels, feats)
+        frame = load_frame_by_index(game_frames_path, frame_idx)
 
-    return labels
+        # decode RLE masks
+        rle_list = players_results[frame_idx]["out_masks_rle"]
+        masks = all_rle_to_masks(rle_list)
+        # players_results[frame_idx]["decoded_masks"] = masks
+
+        # cluster
+        labels = teamassigner.step(frame, masks)
+        players_results[frame_idx]["team_ids"] = debouncer.update(players_results[frame_idx]["out_obj_ids"], labels)
+
+
+    # save results with team_ids
+    output_dir = PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"]
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{game_name}_w_team_ids.pt"
+    torch.save(players_results, output_path)
+    print(f"Saved to {output_path}")
+
 
 
 if __name__ == "__main__":
@@ -63,25 +60,6 @@ if __name__ == "__main__":
 
     players_results = torch.load(players_mask_track_path, map_location="cpu", weights_only=False)
 
-    # cluster all frames
+    classify_players_into_teams(game_name, players_results)
 
-    for frame_idx in range(len(players_results)):
 
-        frame = load_frame_by_index(game_frames_path, frame_idx)
-
-        # decode RLE masks
-        rle_list = players_results[frame_idx]["out_masks_rle"]
-        masks = all_rle_to_masks(rle_list)
-        # players_results[frame_idx]["decoded_masks"] = masks
-
-        # cluster
-        labels = cluster_frame(frame, masks)
-
-        players_results[frame_idx]["team_ids"] = labels
-
-    # save results with team_ids
-    output_dir = PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"]
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / f"{game_name}_w_team_ids.pt"
-    torch.save(players_results, output_path)
-    print(f"Saved to {output_path}")
