@@ -39,7 +39,7 @@ def all_rle_to_masks(rle_list:list) -> np.ndarray:
     return np.stack([rle_to_mask(rle) for rle in rle_list])
 
 def extract_torso(frame: np.ndarray, mask:np.ndarray, top_skip: float = 0.20, bottom_skip: float = 0.4,
-                  min_pixels: int = 200) -> Tuple[np.ndarray, np.ndarray, int, int]:
+                  min_pixels: int = 200) -> Tuple[np.ndarray, np.ndarray, np.ndarray, int, int]:
 
     """
     Extract torso pixels from a player mask by sampling a middle vertical of the player's bounding box
@@ -54,7 +54,10 @@ def extract_torso(frame: np.ndarray, mask:np.ndarray, top_skip: float = 0.20, bo
     # Use upper-body-ish region to avoid pants/ helmet
     ys, xs = np.where(mask) # row, column indices
     if ys.size == 0:
-        return np.empty((0, 3), dtype=frame.dtype), np.empty((0, 0), dtype=bool), 0, 0
+        empty_img = np.empty((0, 0, 3), dtype=frame.dtype)
+        empty_mask = np.empty((0, 0), dtype=bool)
+        empty_pixels = np.empty((0, 3), dtype=frame.dtype)
+        return empty_img, empty_pixels, empty_mask, 0, 0
 
     y0, y1 = int(ys.min()), int(ys.max())
     x0, x1 = int(xs.min()), int(xs.max())
@@ -75,16 +78,18 @@ def extract_torso(frame: np.ndarray, mask:np.ndarray, top_skip: float = 0.20, bo
 
     submask = mask[y_start: y_end, x0:x1]
     subimg = frame[y_start: y_end, x0:x1]
+    torso_crop = subimg.copy()
+    torso_crop[~submask] = 0
     pixels = subimg[submask]
 
     # fallback to full mask if band too small
     if pixels.shape[0] < min_pixels:
         pixels = frame[mask]
 
-    return pixels, submask, y_start, x0
+    return torso_crop, pixels, submask, y_start, x0
 
 def extract_all_torsos(frame:np.ndarray, masks: np.ndarray, top_skip: float = 0.2, bottom_skip: float = 0.4,
-                      min_pixels: int = 200) -> Tuple[List[np.ndarray], List[np.ndarray], List[Tuple[int, int]]]:
+                      min_pixels: int = 200) -> Tuple[List[np.ndarray], List[np.ndarray], List[np.ndarray], List[Tuple[int, int]]]:
     """
     Extract all torso pixels and torso submasks for all players in given frame
     :param frame: image
@@ -97,14 +102,16 @@ def extract_all_torsos(frame:np.ndarray, masks: np.ndarray, top_skip: float = 0.
     all_pixels = []
     all_submasks = []
     all_offsets = []
+    all_torso_crops = []
 
     for mask in masks:
-        pixels, submask, y_off, x_off = extract_torso(frame, mask, top_skip, bottom_skip, min_pixels)
+        torso_crop, pixels, submask, y_off, x_off = extract_torso(frame, mask, top_skip, bottom_skip, min_pixels)
+        all_torso_crops.append(torso_crop)
         all_pixels.append(pixels)
         all_submasks.append(submask)
         all_offsets.append((y_off, x_off))
 
-    return all_pixels, all_submasks, all_offsets
+    return all_torso_crops,all_pixels, all_submasks, all_offsets
 
 def stack_submasks(all_submasks, all_offsets, frame_shape: Tuple[int,int]):
     """
