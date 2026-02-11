@@ -17,7 +17,7 @@ from scripts.utils.config import load_paths, PROJECT_ROOT
 PATHS = load_paths()
 
 
-def cluster_frame(frame: np.ndarray, masks: np.ndarray, n_clusters=2, sep_thresh = 10):
+def cluster_frame(frame: np.ndarray, masks: np.ndarray, n_clusters=2, sep_thresh = 5):
     """
     Run full team-clustering pipeline on a single frame.
     :param frame: (H, W, 3) BGR image
@@ -72,6 +72,7 @@ if __name__ == "__main__":
         # decode RLE masks
         rle_list = players_results[frame_idx]["out_masks_rle"]
         masks = all_rle_to_masks(rle_list)
+        # players_results[frame_idx]["decoded_masks"] = masks
 
         # cluster
         labels = cluster_frame(frame, masks)
