@@ -9,6 +9,10 @@
     "city": "Timrå",
     "country": "Sweden"
   },
+  "jersey_fabric_colour": "white",
+  "jersey_digit_colour": "red",
+  "additional_jersey_descriptions" : "",
+
   "players": [
     {
       "number": 30,

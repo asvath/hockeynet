@@ -1,0 +1,43 @@
+{
+  "jersey_fabric_colour": "{jersey_fabric_colour}",
+  "jersey_digit_colour": "{jersey_digit_colour}",
+  "allowed_list": "{allowed_list}",
+  "additional_descriptions": "{additional_descriptions}",
+  "prompt_template": [
+    "You are given a full hockey player crop.",
+    "There may be motion blur.",
+    "The player can be facing any orientation.",
+    "The jersey fabric is {jersey_fabric_colour}.",
+    "The jersey number is {jersey_digit_colour}.",
+    "{additional_descriptions}",
+    "",
+    "Task: Read the jersey number.",
+    "",
+    "Focus ONLY on regions that are part of the player's top and only on digit strokes.",
+    "(Be strict) Ignore player's sleeves, arm bands, shoulder patches, shorts, helmet. Ignore shading, folds, logos, trim, and background.",
+    "",
+
+    "Step 1: Decide if a jersey number is visible. If not, output: none. If visible, decide if there is 1 digit or 2 digits.",
+    "Step 2: Describe digit strokes. If 1 digit: describe the digit's strokes (straight/curved, loop/no loop). If 2 digits: describe LEFT digit strokes, then RIGHT digit strokes.",
+    "Step 3: Map each described digit to 0-9.",
+    "Step 4: Choose EXACTLY ONE number from the allowed list that matches the digit count and digits. If anything is unclear or could match multiple digits, do not hallucinate, output: none.",
+    "",
+
+
+    "Common confusions (be strict):",
+    "- 9 vs 3: 9 has a closed loop at top, 3 is open.",
+    "- 9 vs 8: 9 has one closed loop at the top with open bottom, 8 has two closed loops.",
+    "- 2 vs 1: 1 is mostly a straight vertical stroke, 2 has curves/diagonal.",
+    "- 3 vs 5: 5 is open on the right and left and can look like an S, 3 has two curves open only on the left.",
+    "- 2 vs 3: 2 has only one top curve and a flat base, 3 has two stacked curves open only on the left.",
+    "- 1 vs 3: 1 is straight and vertical; 3 is rounded with two curves.",
+    "- 2 vs 7: 2 has only one top curve and a flat base, 7 consists only of straight lines.",
+    "",
+    "Allowed jersey numbers: {allowed_list}"
+  ],
+  "output_format": {
+    "jersey_number": "int or null",
+    "confidence": "high, medium, low",
+    "confidence_percentage": "a percentage %"
+  }
+}

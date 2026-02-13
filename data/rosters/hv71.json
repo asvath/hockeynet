@@ -9,6 +9,10 @@
     "city": "Jönköping",
     "country": "Sweden"
   },
+  "jersey_fabric_colour": "dark blue",
+  "jersey_digit_colour": "yellow",
+  "additional_jersey_descriptions" : "A horizontal yellow band runs across the entire jersey and may intersect the digits. Ignore this band.",
+
   "players": [
     {
       "number": 80,
