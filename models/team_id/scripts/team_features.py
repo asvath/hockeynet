@@ -111,7 +111,7 @@ def extract_all_torsos(frame:np.ndarray, masks: np.ndarray, top_skip: float = 0.
         all_submasks.append(submask)
         all_offsets.append((y_off, x_off))
 
-    return all_torso_crops,all_pixels, all_submasks, all_offsets
+    return all_torso_crops, all_pixels, all_submasks, all_offsets
 
 def stack_submasks(all_submasks, all_offsets, frame_shape: Tuple[int,int]):
     """
