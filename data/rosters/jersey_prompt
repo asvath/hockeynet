@@ -6,18 +6,17 @@
   "prompt_template": [
     "{additional_descriptions}",
     "",
-    "Task: Read {jersey_digit_colour} number on {jersey_fabric_colour} background.",
+    "Task: Detect and read {jersey_digit_colour} numbers.",
     "",
     "Ignore any words.",
     "",
 
-    "Step 0: Detect if there is a  number region.",
+    "Step 0: Detect if there any {jersey_digit_colour} numbers.",
     "Step 1: Decide if there is 1 digit or 2 digits.",
     "Step 2: Describe digit strokes. If 1 digit: describe the digit's strokes (straight/curved, loop/no loop). If 2 digits: describe LEFT digit strokes, then RIGHT digit strokes.",
     "Step 3: Map each described digit to 0-9.",
-    "Step 4: Choose EXACTLY ONE number from the allowed list that matches the digit count and digits.",
+    "Step 4: Choose EXACTLY ONE number from {allowed_list} that matches the digit count and digits.",
     "",
-
 
     "Common confusions (be strict):",
     "- 9 vs 3: 9 has a closed loop at top, 3 is open.",
@@ -27,12 +26,11 @@
     "- 2 vs 3: 2 has only one top curve and a flat base, 3 has two stacked curves open only on the left.",
     "- 1 vs 3: 1 has no curves; 3 is rounded with two curves.",
     "- 2 vs 7: 2 has only one top curve and a flat base, 7 consists only of straight lines.",
-    "",
-    "Allowed numbers: {allowed_list}"
+    ""
   ],
   "output_format": {
-    "jersey_number": "int or null",
-    "confidence": "high, medium, low",
-    "confidence_percentage": "a percentage %"
+    "number": "integer or null",
+    "confidence": "high, medium, low"
+    }
   }
-}
+
