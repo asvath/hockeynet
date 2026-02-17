@@ -109,8 +109,6 @@ def detect_jersey_number(game_name: str, players_results: dict, lower_hue_info: 
 
         assert len(torso_crops) == len(players_id)
 
-
-
         tmp_dir = PROJECT_ROOT / "data" / "tmp" / "torso_crops"
         tmp_dir.mkdir(parents=True, exist_ok=True)
 
@@ -124,16 +122,11 @@ def detect_jersey_number(game_name: str, players_results: dict, lower_hue_info: 
                 char_confs = conf[:len(label)]
 
 
-
-
                 if float(char_confs.min()) >= conf_threshold:
-
 
                     allowed = allowed_list_lower_hue if team_id == 0 else allowed_list_upper_hue
                     digits = re.sub(r'\D', '', label)
 
-                    # filename = f"frame_{i:04d}_player_{players_id[j]:02d}_{digits}_{char_confs.min()}_before_{team_id}.jpg"
-                    # cv2.imwrite(str(tmp_dir / filename), enhanced)
 
                     if digits and int(digits) in allowed:
                         players_results[i]["jersey_ids"].append(label)
@@ -175,17 +168,3 @@ if __name__ == "__main__":
     )
 
     detect_jersey_number(game_name, players_results, team_lower_hue_info, team_upper_hue_info)
-
-    # players_results = torch.load(
-    #     PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"] / "shl_hv71_v_tik_w_team_ids_jersey_ids_parseq.pt",
-    #     map_location="cpu",
-    #     weights_only=False,
-    # )
-
-    # for i in range(len(players_results)):
-        # print("*****")
-        # print(players_results[i].keys())
-        # print(len(players_results[i]["out_obj_ids"]))
-        # print(players_results[i]["team_ids"])
-        # print(players_results[i]["jersey_ids"])
-        # print(players_results[i]["jersey_confidence"])
