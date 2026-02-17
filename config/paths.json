@@ -13,5 +13,13 @@
   "DATASET_METADATA": "config/dataset_metadata.json",
   "COCO_ANNOTATIONS" : "data/processed/annotations/coco_annotations.json",
 
-  "SAM3_PROMPTS_DIR": "models/sam3/prompts"
+  "SAM3_PROMPTS_DIR": "models/sam3/prompts",
+  "SAM3_OUTPUTS_MASK_TRACK_DIR" : "models/sam3/outputs/mask_track",
+
+  "YOLO_KEYPOINT_WEIGHTS": "models/yolo_keypoint/weights",
+  "YOLO_KEYPOINT_CONFIG": "models/yolo_keypoint/config",
+  "YOLO_KEYPOINT_SCRIPTS": "models/yolo_keypoint/scripts",
+  "YOLO_KEYPOINT_OUTPUTS_DIR": "models/yolo_keypoint/outputs",
+
+  "TEAM_ID_OUTPUTS_DIR": "models/team_id/outputs"
 }
