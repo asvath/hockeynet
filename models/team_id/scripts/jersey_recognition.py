@@ -30,6 +30,7 @@ def detect_jersey_number(game_name: str, players_results: dict, prompt_text_lowe
     """
 
     for i in range(len(players_results)):
+        print(f"frame {i}")
 
         players_id = players_results[i]["out_obj_ids"] # object id
         player_team_ids = players_results[i]["team_ids"] # player's team id
@@ -70,7 +71,7 @@ def detect_jersey_number(game_name: str, players_results: dict, prompt_text_lowe
 
     torch.save(
         players_results,
-        PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"] / f"{game_name}_w_team_ids_jersey_ids.pt",
+        PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"] / f"{game_name}_w_team_ids_jersey_ids_llm_fixed.pt",
     )
 
 if __name__ == "__main__":
@@ -80,8 +81,8 @@ if __name__ == "__main__":
     tik_roster = load_roster(ROSTERS_DIR / "tik.json")
     jersey_prompt = load_roster(ROSTERS_DIR / "jersey_prompt")
 
-    team_upper_hue_info = build_jersey_info(hv71_roster) # higher hue
-    team_lower_hue_info = build_jersey_info(tik_roster) # lower hue
+    team_lower_hue_info = build_jersey_info(hv71_roster) # lower hue
+    team_upper_hue_info = build_jersey_info(tik_roster) # higher hue
 
     players_results = torch.load(
         PROJECT_ROOT / PATHS["TEAM_ID_OUTPUTS_DIR"] / "shl_hv71_v_tik_w_team_ids.pt",
